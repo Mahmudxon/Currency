@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="3"
+    android:background="@color/whiteWithAlpha"
+    android:layout_margin="5dp"
+    >
+
+    <TextView
+        android:id="@+id/currency"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="AQSh Dollari" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:gravity="center|end"
+        android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textColor="#333"
+        android:textSize="16sp"
+        tools:text="10300.25" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        tools:text="+300.25"
+        android:textSize="12sp"
+        tools:textColor="@color/green" />
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="?actionBarSize"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:src="@drawable/ic_baseline_trending_up_24" />
+    </LinearLayout>
+</LinearLayout>

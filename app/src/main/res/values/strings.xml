@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Valyutalar kursi</string>
+    <string name="currency_exchange">Valyuta konvetori</string>
+    <string name="uzbek_summ">O\'zbek so\'mi</string>
+    <string name="no_connection">Tarmoqqa ulanish imkoni yo\'q</string>
+    <string name="refresh">Takrorlash</string>
+    <string name="quit">Chiqish</string>
+</resources>
