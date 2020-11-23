@@ -5,4 +5,13 @@
     <string name="no_connection">Tarmoqqa ulanish imkoni yo\'q</string>
     <string name="refresh">Takrorlash</string>
     <string name="quit">Chiqish</string>
+    <string name="author">© Mahmudxon</string>
+    <string name="rate_us">Play marketda baholang</string>
+    <string name="app_source">Dastur kodlari</string>
+    <string name="join_telegram_channel">Telegram kanalimiz</string>
+    <string name="join_me_facebook">Biz Facebookda</string>
+    <string name="follow_me_twitter">Biz Twitterda</string>
+    <string name="fallow_me_instagram">Biz Instagramda</string>
+    <string name="feedback">Fikr mulohaza</string>
+    <string name="about_app">Dastur haqida</string>
 </resources>

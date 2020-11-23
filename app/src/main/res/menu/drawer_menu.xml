@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/play_store"
+        android:icon="@drawable/ic_play_store"
+        android:title="@string/rate_us" />
+
+    <item
+        android:id="@+id/github"
+        android:icon="@drawable/ic_github"
+        android:title="@string/app_source" />
+
+    <item
+        android:id="@+id/telegram"
+        android:icon="@drawable/ic_telegram"
+        android:title="@string/join_telegram_channel" />
+
+    <item
+        android:id="@+id/facebook"
+        android:icon="@drawable/ic_facebook"
+        android:title="@string/join_me_facebook" />
+
+    <item
+        android:id="@+id/twitter"
+        android:icon="@drawable/ic_twitter"
+        android:title="@string/follow_me_twitter" />
+
+    <item
+        android:id="@+id/instagram"
+        android:icon="@drawable/ic_instagram"
+        android:title="@string/fallow_me_instagram" />
+
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/ic_feedback"
+        android:title="@string/feedback" />
+
+    <item
+        android:id="@+id/info"
+        android:icon="@drawable/ic_info"
+        android:title="@string/about_app" />
+
+</menu>
