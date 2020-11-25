@@ -104,6 +104,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDa
             R.id.instagram -> openUrlIntent(github)
             R.id.play_store -> openUrlIntent(playStore)
             R.id.twitter -> openUrlIntent(twitter)
+            R.id.feedback -> navController.navigate(R.id.action_mainFragment_to_feedbackFragment)
         }
         binding.drawer.closeDrawer(GravityCompat.START)
         return true

@@ -14,4 +14,7 @@
     <string name="fallow_me_instagram">Biz Instagramda</string>
     <string name="feedback">Fikr mulohaza</string>
     <string name="about_app">Dastur haqida</string>
+    <string name="your_name">Ismingiz</string>
+    <string name="contact">E-mail yoki Telefon</string>
+    <string name="your_message">Sizning Xabaringiz</string>
 </resources>
