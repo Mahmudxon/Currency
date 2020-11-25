@@ -89,11 +89,12 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/author"
+                android:src="@drawable/ic_baseline_wifi_off_60"
                 android:textAlignment="center"
                 android:textAllCaps="true"
                 android:textColor="@color/textColor"
                 android:textSize="18sp"
+                android:text="@string/author"
                 android:textStyle="bold" />
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>

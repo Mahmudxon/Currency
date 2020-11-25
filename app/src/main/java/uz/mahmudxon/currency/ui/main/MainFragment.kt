@@ -2,7 +2,10 @@ package uz.mahmudxon.currency.ui.main
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.content.Intent
+import android.net.Uri
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import android.widget.DatePicker
 import androidx.core.os.bundleOf
@@ -10,6 +13,7 @@ import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.navigation.NavigationView
 import org.joda.time.DateTime
 import org.koin.androidx.viewmodel.scope.viewModel
 import org.koin.ext.scope
@@ -19,10 +23,10 @@ import uz.mahmudxon.currency.list.currency.CurrencyAdapter
 import uz.mahmudxon.currency.list.currency.ICurrencyListItemClickListener
 import uz.mahmudxon.currency.model.Currency
 import uz.mahmudxon.currency.ui.base.BaseFragment
-import uz.mahmudxon.currency.util.TAG
+import uz.mahmudxon.currency.util.*
 
 class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDateSetListener,
-    ICurrencyListItemClickListener {
+    ICurrencyListItemClickListener, NavigationView.OnNavigationItemSelectedListener {
     private val vm: MainViewModel by scope.viewModel(this)
     private val adapter: CurrencyAdapter by scope.inject()
     private lateinit var binding: FragmentMainBinding
@@ -31,6 +35,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDa
     override fun onCreate(view: View) {
         binding = FragmentMainBinding.bind(view)
         binding.list.layoutManager = LinearLayoutManager(context)
+        binding.navView.setNavigationItemSelectedListener(this)
         binding.list.adapter = adapter
         adapter.listener = this
         binding.menu.setOnClickListener { binding.drawer.openDrawer(GravityCompat.START) }
@@ -90,4 +95,20 @@ class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDa
             bundleOf("ccy" to item.Ccy)
         )
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.facebook -> openUrlIntent(facebook)
+            R.id.telegram -> openUrlIntent(telegram)
+            R.id.github -> openUrlIntent(github)
+            R.id.instagram -> openUrlIntent(github)
+            R.id.play_store -> openUrlIntent(playStore)
+            R.id.twitter -> openUrlIntent(twitter)
+        }
+        binding.drawer.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun openUrlIntent(url: String) =
+        activity?.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
 }
