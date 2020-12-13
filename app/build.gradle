@@ -22,7 +22,7 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures {
@@ -31,11 +31,11 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField "String", "BASE_URL", "\"http://cbu.uz/uz/\""
+            buildConfigField "String", "BASE_URL", "\"http://cbu.uz/oz/\""
             signingConfig signingConfigs.'Play Store Config'
         }
         release {
-            buildConfigField "String", "BASE_URL", "\"http://cbu.uz/uz/\""
+            buildConfigField "String", "BASE_URL", "\"http://cbu.uz/oz/\""
             multiDexEnabled true
             postprocessing {
                 removeUnusedResources false
