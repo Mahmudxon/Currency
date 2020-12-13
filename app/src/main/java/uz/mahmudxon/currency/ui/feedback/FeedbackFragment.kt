@@ -6,13 +6,14 @@ import com.creativityapps.gmailbackgroundlibrary.BackgroundMail
 import org.koin.ext.scope
 import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.databinding.FragmentFeedbackBinding
+import uz.mahmudxon.currency.dialog.WaitDialog
 import uz.mahmudxon.currency.ui.base.BaseFragment
 
 class FeedbackFragment : BaseFragment(R.layout.fragment_feedback), View.OnClickListener,
     BackgroundMail.OnSendingCallback {
     lateinit var binding: FragmentFeedbackBinding
     private val sender: BackgroundMail.Builder by scope.inject()
-    private var waitDialog: AlertDialog? = null
+    private var waitDialog: WaitDialog? = null
     override fun onCreate(view: View) {
         binding = FragmentFeedbackBinding.bind(view)
         binding.send.setOnClickListener(this)
@@ -32,9 +33,7 @@ class FeedbackFragment : BaseFragment(R.layout.fragment_feedback), View.OnClickL
         val message = binding.message.text.toString()
         val appname = context?.getString(R.string.app_name)
         if (message.length > 3 && sender.length > 3 && contact.length > 3) {
-            waitDialog = AlertDialog.Builder(requireContext()).create()
-            waitDialog?.setCancelable(false)
-            waitDialog?.setContentView(R.layout.dialog_wait)
+            waitDialog = WaitDialog(requireContext())
             waitDialog?.show()
             this.sender.withSubject("feedback from (android app) - $appname")
                 .withType(BackgroundMail.TYPE_PLAIN)
