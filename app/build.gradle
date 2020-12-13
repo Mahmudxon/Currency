@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        'Play Store Config' {
+            storeFile file('C:\\Users\\Mahmudxon\\AndroidStudioProjects\\Currency\\keystore.jks')
+            storePassword 'keyabc'
+            keyAlias 'key0'
+            keyPassword 'keyabc'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
@@ -24,6 +32,7 @@ android {
     buildTypes {
         debug {
             buildConfigField "String", "BASE_URL", "\"http://cbu.uz/uz/\""
+            signingConfig signingConfigs.'Play Store Config'
         }
         release {
             buildConfigField "String", "BASE_URL", "\"http://cbu.uz/uz/\""
@@ -34,6 +43,7 @@ android {
                 optimizeCode true
                 proguardFile 'proguard-rules.pro'
             }
+            signingConfig signingConfigs.'Play Store Config'
         }
     }
 
