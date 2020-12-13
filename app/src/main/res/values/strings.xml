@@ -17,4 +17,8 @@
     <string name="your_name">Ismingiz</string>
     <string name="contact">E-mail yoki Telefon</string>
     <string name="your_message">Sizning Xabaringiz</string>
+    <string name="send_success_feedback">Xabaringiz jo\'natildi, albatta uni ko\'rib chiqamiz! E\'tibor uchun tashakkur!</string>
+    <string name="send_fail_feedback">Xabar jo\'natilmadi! Ehtimol, internetga ulanish imkoni yo\'qdir :-(</string>
+    <string name="need_3_characters_message">Barcha maydonlar 3 tadan ko\'p belgi bilan to\'ldirilishi shart!</string>
+    <string name="please_wait">Iltimos, kuting....</string>
 </resources>

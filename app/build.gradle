@@ -47,7 +47,7 @@ android {
 }
 
 ext {
-    nav_version = "2.3.1"
+    nav_version = "2.3.2"
     retrofit2_version = "2.9.0"
     glide_version = "4.11.0"
     recyclerview_version = "1.1.0"
@@ -103,7 +103,10 @@ dependencies {
     // Joda Time
     implementation "joda-time:joda-time:$joda_version"
 
-    //okhttp3:logging-interceptor
+    // okhttp3:logging-interceptor
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
     implementation 'com.readystatesoftware.chuck:library:1.1.0'
+
+    // Gmail background
+    implementation 'com.github.luongvo:GmailBackground:2.1.1'
 }

@@ -1,7 +1,9 @@
 package uz.mahmudxon.currency.di
 
+import android.content.Context
 import android.util.Log
 import androidx.room.Room
+import com.creativityapps.gmailbackgroundlibrary.BackgroundMail
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.readystatesoftware.chuck.ChuckInterceptor
@@ -22,6 +24,7 @@ import uz.mahmudxon.currency.repo.cbu.CbuRepo
 import uz.mahmudxon.currency.repo.cbu.ICbuRepo
 import uz.mahmudxon.currency.ui.converter.ConverterFragment
 import uz.mahmudxon.currency.ui.converter.ConverterViewModel
+import uz.mahmudxon.currency.ui.feedback.FeedbackFragment
 import uz.mahmudxon.currency.ui.main.MainFragment
 import uz.mahmudxon.currency.ui.main.MainViewModel
 import uz.mahmudxon.currency.util.Constants
@@ -65,7 +68,7 @@ val dbModule = module {
     single<ICurrencyDao> { get<CbuDB>().currencyDao() }
 }
 
-val cbuModule = module{
+val cbuModule = module {
     single<ICbuService> { get<Retrofit>().create(ICbuService::class.java) }
     single<ICbuRepo> { CbuRepo(get()) }
 }
@@ -84,4 +87,17 @@ val converterModule = module {
     }
 }
 
-val koinModules = listOf(networkModule, dbModule, cbuModule, mainModule, converterModule)
+val feedbackModule = module {
+    scope(named<FeedbackFragment>())
+    {
+        factory {
+            BackgroundMail.newBuilder(get<FeedbackFragment>().context)
+                .withUsername(Constants.GMailUsername)
+                .withPassword(Constants.GmailPassword)
+                .withMailTo(Constants.InboxMail)
+        }
+    }
+}
+
+val koinModules =
+    listOf(networkModule, dbModule, cbuModule, mainModule, converterModule, feedbackModule)

@@ -101,7 +101,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDa
             R.id.facebook -> openUrlIntent(facebook)
             R.id.telegram -> openUrlIntent(telegram)
             R.id.github -> openUrlIntent(github)
-            R.id.instagram -> openUrlIntent(github)
+            R.id.instagram -> openUrlIntent(instagram)
             R.id.play_store -> openUrlIntent(playStore)
             R.id.twitter -> openUrlIntent(twitter)
             R.id.feedback -> navController.navigate(R.id.action_mainFragment_to_feedbackFragment)
