@@ -17,6 +17,7 @@ class FeedbackFragment : BaseFragment(R.layout.fragment_feedback), View.OnClickL
     override fun onCreate(view: View) {
         binding = FragmentFeedbackBinding.bind(view)
         binding.send.setOnClickListener(this)
+        binding.cancel.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
