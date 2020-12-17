@@ -21,4 +21,6 @@
     <string name="send_fail_feedback">Xabar jo\'natilmadi! Ehtimol, internetga ulanish imkoni yo\'qdir :-(</string>
     <string name="need_3_characters_message">Barcha maydonlar 3 tadan ko\'p belgi bilan to\'ldirilishi shart!</string>
     <string name="please_wait">Iltimos, kuting....</string>
+    <string name="source"><a href="https://cbu.uz/uz/">O\‘zbekiston Respublikasi Markaziy banki</a> ochiq ma\'lumotlari asosida tayyorlangan. Dastur ochiq kodli bo\'lib, <a href="https://opensource.org/licenses/Apache-2.0">Apache License</a> asosida tarqatiladi</string>
+    <string name="ok">Ok</string>
 </resources>

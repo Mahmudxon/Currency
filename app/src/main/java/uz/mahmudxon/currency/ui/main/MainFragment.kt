@@ -19,6 +19,7 @@ import org.koin.androidx.viewmodel.scope.viewModel
 import org.koin.ext.scope
 import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.databinding.FragmentMainBinding
+import uz.mahmudxon.currency.dialog.AboutDialog
 import uz.mahmudxon.currency.list.currency.CurrencyAdapter
 import uz.mahmudxon.currency.list.currency.ICurrencyListItemClickListener
 import uz.mahmudxon.currency.model.Currency
@@ -105,6 +106,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDa
             R.id.play_store -> openUrlIntent(playStore)
             R.id.twitter -> openUrlIntent(twitter)
             R.id.feedback -> navController.navigate(R.id.action_mainFragment_to_feedbackFragment)
+            R.id.info -> AboutDialog(requireContext()).show()
         }
         binding.drawer.closeDrawer(GravityCompat.START)
         return true
