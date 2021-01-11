@@ -43,7 +43,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main), DatePickerDialog.OnDa
         binding.calendar.setOnClickListener {
             val dialog = DatePickerDialog(requireContext(), this, 2020, 12, 11)
             val today = DateTime()
-            val m180DayAgo = today.minusDays(180)
+            val m180DayAgo = today.minusDays(730)
             dialog.datePicker.minDate = m180DayAgo.millis
             dialog.datePicker.maxDate = today.millis
             dialog.show()

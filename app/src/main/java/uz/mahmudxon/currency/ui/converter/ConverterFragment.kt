@@ -15,7 +15,7 @@ import uz.mahmudxon.currency.list.history.HistoryAdapter
 import uz.mahmudxon.currency.model.Currency
 import uz.mahmudxon.currency.ui.base.BaseFragment
 import uz.mahmudxon.currency.util.TAG
-import java.text.NumberFormat
+import uz.mahmudxon.currency.util.toNumberFormatString
 
 class ConverterFragment : BaseFragment(R.layout.fragment_converter), TextWatcher {
     lateinit var binding: FragmentConverterBinding
@@ -80,9 +80,9 @@ class ConverterFragment : BaseFragment(R.layout.fragment_converter), TextWatcher
         try {
             val d = binding.edt1.text.toString().toDouble()
             val result = if (isReversed) d / currency else d * currency
-            val formatter: NumberFormat = NumberFormat.getCurrencyInstance()
-            val moneyString: String = formatter.format(result).replace("$", "")
-            binding.edt2.setText(moneyString)
+            /*val formatter: NumberFormat = NumberFormat.getCurrencyInstance()
+            val moneyString: String = formatter.format(result).replace("$", "")*/
+            binding.edt2.setText(result.toNumberFormatString())
         } catch (e: Exception) {
             Log.d(TAG, "calculate: $e")
         }

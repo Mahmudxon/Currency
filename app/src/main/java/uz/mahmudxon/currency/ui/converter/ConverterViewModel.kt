@@ -54,7 +54,7 @@ class ConverterViewModel : BaseViewModel() {
                     result.data.forEach { data.value = it }; n++
                 }
             }
-            if (n < 180)
+            if (n < 730)
                 prevDays()
         }
     }
