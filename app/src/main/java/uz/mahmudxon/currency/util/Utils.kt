@@ -34,6 +34,5 @@ fun String.safeCut(size: Int): String {
 
 fun Double.toNumberFormatString(): String {
     val whole = this.toInt()
-    val fraction = this - whole
-    return whole.toNumberFormatString() + "." + fraction.toString().split(".").last().safeCut(2)
+    return whole.toNumberFormatString() + "." + "%.2f".format(this).split(".").last().safeCut(2)
 }

@@ -21,7 +21,7 @@ class ConverterViewModel : BaseViewModel() {
     private val todayData = MutableLiveData<Currency>()
     private var c = ""
     private val today = DateTime()
-    private var n = 1
+    private var n = 7
     val loading = MutableLiveData<Boolean>()
 
     fun getToday(): LiveData<Currency> = todayData
@@ -51,7 +51,7 @@ class ConverterViewModel : BaseViewModel() {
         viewModelScope.launch {
             when (val result = repo.getCurrency(c, s)) {
                 is VMResponse.Success -> {
-                    result.data.forEach { data.value = it }; n++
+                    result.data.forEach { data.value = it }; n+=7
                 }
             }
             if (n < 730)
