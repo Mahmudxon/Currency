@@ -388,9 +388,9 @@ fun ConvertorScreenItem(
                     focusedContainerColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
                     focusedIndicatorColor = Color.Transparent,
-                    cursorColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    focusedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    unfocusedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    cursorColor = MaterialTheme.colorScheme.onBackground,
+                    focusedTextColor = MaterialTheme.colorScheme.onBackground,
+                    unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
             )
