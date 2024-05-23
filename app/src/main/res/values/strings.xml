@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Valyutalar kursi</string>
+    <string name="search_currency">Izlash . . .</string>
+    <string name="sell">Sotish</string>
+    <string name="buy">Sotib Olish</string>
+    <string name="error_refresh">Qayta urinib ko\'rish</string>
+    <string name="no_connection">Tarmoqqa ulanib bo\'lmadi</string>
+    <string name="no_connection_description">"Mobil internet yoki Wi-Fi yoqilganligiga ishonch hosil qilib qayta urinib ko'ring! "</string>
+    <string name="uzs_full_name">O\'zbek so\'mi</string>
+</resources>
