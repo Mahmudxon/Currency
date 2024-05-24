@@ -11,6 +11,9 @@ plugins {
 val RELEASE_KEY_ALIAS: String by project
 val RELEASE_STORE_PASSWORD: String by project
 val RELEASE_KEY_PASSWORD: String by project
+val PLAY_KEY_ALIAS: String by project
+val PLAY_STORE_PASSWORD: String by project
+val PLAY_KEY_PASSWORD: String by project
 
 android {
     namespace = "uz.mahmudxon.currency"
@@ -45,6 +48,13 @@ android {
             storePassword = RELEASE_STORE_PASSWORD
             keyPassword = RELEASE_KEY_PASSWORD
         }
+        create("playStore")
+        {
+            storeFile = file("config/playstore.keystore")
+            keyAlias = PLAY_KEY_ALIAS
+            storePassword = PLAY_STORE_PASSWORD
+            keyPassword = PLAY_KEY_PASSWORD
+        }
     }
 
     buildTypes {
@@ -70,6 +80,11 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+
+        create("playStoreRelease") {
+            initWith(getByName("release"))
+            signingConfig = signingConfigs.getByName("playStore")
         }
 
         create("huaweiRelease") {
@@ -149,6 +164,7 @@ dependencies {
     debugImplementation(libs.chuckerteam.chucker.debug)
     releaseImplementation(libs.chuckerteam.chucker.release)
     "huaweiReleaseImplementation"(libs.chuckerteam.chucker.release)
+    "playStoreReleaseImplementation"(libs.chuckerteam.chucker.release)
 
     // Coil
     implementation(libs.io.coil.compose)
