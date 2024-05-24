@@ -22,7 +22,6 @@ class IpotekaBank(networkClient: NetworkClient) : CommercialBank(networkClient) 
             responseAsText.substringAfter("<table class=\"table table-hover table-striped\">")
                 .substringBefore("</table>")
         val spanTags = table.split(Regex("<span .*?>|</span>")).filter { it.trim().isNotEmpty() }
-        dlog(spanTags)
         val values = ArrayList<Double>()
         for (spanTag in spanTags) {
             try {
