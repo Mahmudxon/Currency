@@ -33,7 +33,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -377,8 +379,13 @@ fun ConvertorScreenItem(
 
             TextField(
                 modifier = Modifier.weight(1f),
-                value = currencyValue,
-                onValueChange = onEdit,
+                value = TextFieldValue(
+                    text = currencyValue,
+                    selection = TextRange(currencyValue.length)
+                ),
+                onValueChange = {
+                    onEdit.invoke(it.text)
+                },
                 singleLine = true,
                 textStyle = MaterialTheme.typography.titleLarge.copy(
                     textAlign = TextAlign.End,
@@ -392,7 +399,7 @@ fun ConvertorScreenItem(
                     focusedTextColor = MaterialTheme.colorScheme.onBackground,
                     unfocusedTextColor = MaterialTheme.colorScheme.onBackground,
                 ),
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
             )
         }
     }
