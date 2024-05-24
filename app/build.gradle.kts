@@ -64,7 +64,7 @@ android {
             buildConfigField(
                 "String",
                 "AppDownloadUrl",
-                "\"https://dev.unicon.uz/mahmudxon/uzcrypto-compose\""
+                "\"https://mahmudxon.uz/\""
             )
         }
         release {
