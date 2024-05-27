@@ -11,6 +11,9 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import uz.mahmudxon.currency.data.repo.GetCommercialBankData
 import uz.mahmudxon.currency.data.repo.GetCurrencyChart
+import uz.mahmudxon.currency.model.Bank
+import uz.mahmudxon.currency.model.BankPrice
+import uz.mahmudxon.currency.model.BestOffer
 import uz.mahmudxon.currency.model.Currency
 import uz.mahmudxon.currency.util.moneyStringToDouble
 import uz.mahmudxon.currency.util.toMoneyString
@@ -60,12 +63,54 @@ class CurrencyDetailsViewModel @Inject constructor(
                         _state.value = _state.value.copy(
                             bankPrices = it.sortedBy { it.bank.name }
                         )
+                        findBestOffer(it)
                     }
                 }
                 .launchIn(CoroutineScope(IO))
         }
     }
 
+
+    private fun findBestOffer(prices: List<BankPrice>) {
+        var buy = Double.MIN_VALUE
+        var sell = Double.MAX_VALUE
+        val buyBanks = ArrayList<Bank>()
+        val sellBanks = ArrayList<Bank>()
+
+        prices.forEach {
+            if (it.sell == sell) {
+                sellBanks.add(it.bank)
+            }
+
+            if (it.sell > 0 && it.sell < sell) {
+                sellBanks.clear()
+                sellBanks.add(it.bank)
+                sell = it.sell
+            }
+
+            if (it.buy == buy) {
+                buyBanks.add(it.bank)
+            }
+
+            if (it.buy > 0 && it.buy > buy) {
+                buyBanks.clear()
+                buyBanks.add(it.bank)
+                buy = it.buy
+            }
+        }
+
+        _state.value = _state.value.copy(
+            bestOfferForSelling = BestOffer(
+                price = sell,
+                banks = sellBanks
+            ),
+
+            bestOfferForBuying = BestOffer(
+                price = buy,
+                banks = buyBanks
+            )
+        )
+    }
 
     fun onEvent(event: CurrencyDetailsEvent) {
         when (event) {
@@ -84,7 +129,7 @@ class CurrencyDetailsViewModel @Inject constructor(
                 val v = event.value.moneyStringToDouble()
                 val localValue = v * d
                 _state.value = _state.value.copy(
-                    foreignValue = if (event.value.isEmpty()) "" else v.toMoneyString(),
+                    foreignValue = event.value,
                     localValue = localValue.toMoneyString()
                 )
             }
@@ -94,7 +139,7 @@ class CurrencyDetailsViewModel @Inject constructor(
                 val v = event.value.moneyStringToDouble()
                 val foreignValue = v / d
                 _state.value = _state.value.copy(
-                    localValue = if (event.value.isEmpty()) "" else v.toMoneyString(),
+                    localValue = event.value,
                     foreignValue = foreignValue.toMoneyString()
                 )
             }

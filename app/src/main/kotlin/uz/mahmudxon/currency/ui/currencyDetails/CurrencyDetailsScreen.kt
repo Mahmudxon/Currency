@@ -41,6 +41,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.model.BankPrice
+import uz.mahmudxon.currency.model.BestOffer
 import uz.mahmudxon.currency.ui.component.chart.LineChart
 import uz.mahmudxon.currency.ui.component.chart.LineChartData
 import uz.mahmudxon.currency.ui.component.chart.common.animation.simpleChartAnimation
@@ -131,6 +132,23 @@ fun CurrencyDetailsScreen(
             )
         }
 
+        if (state.sellingAvailable && state.bestOfferForSelling.price != 0.0) {
+            item {
+                BestOffer(
+                    title = stringResource(id = R.string.best_offer_for_selling),
+                    bestOffer = state.bestOfferForSelling
+                )
+            }
+        }
+
+        if (state.sellingAvailable && state.bestOfferForBuying.price != 0.0) {
+            item {
+                BestOffer(
+                    title = stringResource(id = R.string.best_offer_for_buying),
+                    bestOffer = state.bestOfferForBuying
+                )
+            }
+        }
         items(state.bankPrices, key = { it.bank.id }) {
             BankCurrencyPriceItem(item = it) {}
         }
@@ -401,6 +419,69 @@ fun ConvertorScreenItem(
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
             )
+        }
+    }
+}
+
+@Composable
+fun BestOffer(title: String, bestOffer: BestOffer) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+    ) {
+        Text(
+            text = title,
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onBackground,
+        )
+
+        Card(
+            modifier = Modifier
+                .fillMaxWidth(),
+            elevation = CardDefaults.cardElevation(0.dp),
+            colors = CardDefaults.cardColors().copy(
+                containerColor = MaterialTheme.colorScheme.surfaceVariant
+            ),
+            shape = RoundedCornerShape(16.dp),
+        ) {
+            Column(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp)
+            ) {
+                Text(
+                    text = "${bestOffer.price.toMoneyString()} so'm",
+                    style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier
+                        .fillMaxWidth(),
+                    textAlign = TextAlign.Center
+                )
+                bestOffer.banks.forEach { bank ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+
+                        AsyncImage(
+                            model = bank.logo,
+                            contentDescription = bank.name,
+                            modifier = Modifier.size(24.dp)
+                        )
+
+                        Text(
+                            text = bank.name,
+                            style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.onBackground,
+                            modifier = Modifier
+                                .weight(1f)
+                                .padding(start = 16.dp),
+                        )
+                    }
+                }
+            }
         }
     }
 }

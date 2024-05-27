@@ -7,4 +7,6 @@
     <string name="no_connection">Tarmoqqa ulanib bo\'lmadi</string>
     <string name="no_connection_description">"Mobil internet yoki Wi-Fi yoqilganligiga ishonch hosil qilib qayta urinib ko'ring! "</string>
     <string name="uzs_full_name">O\'zbek so\'mi</string>
+    <string name="best_offer_for_selling">Valyuta sotish uchun eng yaxshi taklif:</string>
+    <string name="best_offer_for_buying">Valyuta sotib olish uchun eng yaxshi taklif:</string>
 </resources>
