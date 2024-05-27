@@ -8,7 +8,8 @@
 - **Hilt**: For dependency injection.
 - **Ktor Client**: For making network requests.
 - **Kotlin Serialization**: For parsing JSON and other serialization formats.
-
+- **Charts by Taras Koshkin**: For creating beautiful and interactive charts. [GitHub Repository](https://github.com/tehras/charts)
+  
 ## Screenshots
 
 <div style="display: flex; flex-direction: row;">
@@ -25,13 +26,17 @@ To get started with this project, follow the instructions below:
    git clone https://github.com/Mahmudxon/Currency.git
    ```
 2. Navigate to the project directory:
- ```sh
+   ```sh
    cd Currency
    ```
 3. Open project with Android Studio
    
 ## Contributing
 This repository is open to any pull requests. Contributions are welcome! Please open an issue or submit a pull request if you would like to contribute.
+
+## Acknowledgements
+
+Special thanks to Taras Koshkin for his amazing [charts library](https://github.com/tehras/charts) that made the creation of beautiful and interactive charts in this project possible.
 
 ## License
 This project is licensed under the Apache License 2.0
