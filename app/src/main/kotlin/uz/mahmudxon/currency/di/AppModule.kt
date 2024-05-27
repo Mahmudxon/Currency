@@ -22,6 +22,7 @@ import uz.mahmudxon.currency.data.network.cbu.Cbu
 import uz.mahmudxon.currency.data.network.commercial.CommercialBank
 import uz.mahmudxon.currency.data.network.davrbank.DavrBank
 import uz.mahmudxon.currency.data.network.hamkorbank.HamkorBank
+import uz.mahmudxon.currency.data.network.infinbank.InfinBank
 import uz.mahmudxon.currency.data.network.ipotekabank.IpotekaBank
 import uz.mahmudxon.currency.data.network.kapital.KapitalBank
 import uz.mahmudxon.currency.data.network.mk.MkBank
@@ -141,4 +142,8 @@ object AppModule {
     @Provides
     @IntoSet
     fun provideHammaBank(networkClient: NetworkClient): CommercialBank = HamkorBank(networkClient)
+
+    @Provides
+    @IntoSet
+    fun provideInfinitBank(networkClient: NetworkClient): CommercialBank = InfinBank(networkClient)
 }

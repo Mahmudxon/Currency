@@ -430,11 +430,6 @@ fun BestOffer(title: String, bestOffer: BestOffer) {
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-        Text(
-            text = title,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onBackground,
-        )
 
         Card(
             modifier = Modifier
@@ -451,33 +446,54 @@ fun BestOffer(title: String, bestOffer: BestOffer) {
                     .padding(16.dp)
             ) {
                 Text(
-                    text = "${bestOffer.price.toMoneyString()} so'm",
-                    style = MaterialTheme.typography.titleLarge,
+                    text = title,
+                    style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onBackground,
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    textAlign = TextAlign.Center
+                    modifier = Modifier.padding(bottom = 8.dp)
                 )
-                bestOffer.banks.forEach { bank ->
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically
+
+                Row(Modifier.fillMaxWidth()) {
+
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        horizontalAlignment = Alignment.Start
                     ) {
+                        bestOffer.banks.forEach { bank ->
+                            Row(
+                                modifier = Modifier
+                                    .fillMaxWidth(),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
 
-                        AsyncImage(
-                            model = bank.logo,
-                            contentDescription = bank.name,
-                            modifier = Modifier.size(24.dp)
-                        )
+                                AsyncImage(
+                                    model = bank.logo,
+                                    contentDescription = bank.name,
+                                    modifier = Modifier.size(24.dp)
+                                )
 
+                                Text(
+                                    text = bank.name,
+                                    style = MaterialTheme.typography.titleMedium,
+                                    color = MaterialTheme.colorScheme.onBackground,
+                                    modifier = Modifier
+                                        .weight(1f)
+                                        .padding(start = 16.dp),
+                                )
+                            }
+                        }
+                    }
+
+                    Column(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxHeight(),
+                        horizontalAlignment = Alignment.End,
+                        verticalArrangement = Arrangement.Center
+                    ) {
                         Text(
-                            text = bank.name,
-                            style = MaterialTheme.typography.titleMedium,
-                            color = MaterialTheme.colorScheme.onBackground,
-                            modifier = Modifier
-                                .weight(1f)
-                                .padding(start = 16.dp),
+                            text = "${bestOffer.price.toMoneyString()} so'm",
+                            style = MaterialTheme.typography.titleLarge,
+                            color = MaterialTheme.colorScheme.onBackground
                         )
                     }
                 }
