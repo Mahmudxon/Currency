@@ -38,5 +38,7 @@ This repository is open to any pull requests. Contributions are welcome! Please 
 
 Special thanks to Taras Koshkin for his amazing [charts library](https://github.com/tehras/charts) that made the creation of beautiful and interactive charts in this project possible.
 
+Check out our app on the [Google Play Store](https://play.google.com/store/apps/details?id=uz.mahmudxon.currency).
+
 ## License
 This project is licensed under the Apache License 2.0
