@@ -438,7 +438,7 @@ fun BestOffer(title: String, bestOffer: BestOffer) {
             colors = CardDefaults.cardColors().copy(
                 containerColor = MaterialTheme.colorScheme.surfaceVariant
             ),
-            shape = RoundedCornerShape(16.dp),
+            shape = RoundedCornerShape(8.dp),
         ) {
             Column(
                 Modifier
@@ -468,7 +468,7 @@ fun BestOffer(title: String, bestOffer: BestOffer) {
                                 AsyncImage(
                                     model = bank.logo,
                                     contentDescription = bank.name,
-                                    modifier = Modifier.size(24.dp)
+                                    modifier = Modifier.size(20.dp)
                                 )
 
                                 Text(
@@ -480,7 +480,9 @@ fun BestOffer(title: String, bestOffer: BestOffer) {
                                         .padding(start = 16.dp),
                                 )
                             }
+                            Spacer(modifier = Modifier.height(4.dp))
                         }
+
                     }
 
                     Column(
