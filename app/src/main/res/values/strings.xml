@@ -9,7 +9,7 @@
     <string name="uzs_full_name">O\'zbek so\'mi</string>
     <string name="best_offer_for_selling">Sotish uchun eng yaxshi taklif:</string>
     <string name="best_offer_for_buying">Sotib olish uchun eng yaxshi taklif:</string>
-    <string name="goto_bank_website">Bank veb-saytini ochish</string>
+    <string name="goto_bank_website">Bank veb-sayti</string>
     <string name="cbu_price">MB kursi</string>
-    <string name="bank_price_will_be_different_waring">(!) Banklar kursni kunning istalgan qismini o\'zgatirish huquqi ega! Siz ko\'rib turgan ma\'lumot esa banklarning saytlaridan olingan. Valyutani ko\'rsatilgan kursda olishingiz kafolatlanmaydi!</string>
+    <string name="bank_price_will_be_different_waring">(!) Ma\'lumotlar bank saytidan olingan. Valyutani ko\'rsatilgan kursda olishingiz kafolatlanmaydi! </string>
 </resources>
