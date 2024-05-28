@@ -5,7 +5,6 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
-import uz.mahmudxon.currency.BuildConfig
 import uz.mahmudxon.currency.data.cache.dao.CommercialPriceDao
 import uz.mahmudxon.currency.data.cache.mapper.CommercialPriceMapper
 import uz.mahmudxon.currency.data.cache.prefs.PrefKeys
@@ -28,7 +27,7 @@ class GetCommercialBankData(
 
         // 6 hour
         val isLocalDataActual =
-            System.currentTimeMillis() - lastUpdate < 6 * 60 * 60 * 1000 && !BuildConfig.DEBUG
+            System.currentTimeMillis() - lastUpdate < 6 * 60 * 60 * 1000 // && !BuildConfig.DEBUG
         if (isLocalDataActual) {
             val response = dao.getAll(code).map { mapper.mapToDomain(it) }
             emit(DataState.data(response))

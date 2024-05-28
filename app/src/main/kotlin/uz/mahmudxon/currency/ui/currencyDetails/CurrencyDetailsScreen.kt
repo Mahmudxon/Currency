@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyItemScope
 import androidx.compose.foundation.lazy.items
@@ -495,7 +496,11 @@ fun BestOffer(title: String, bestOffer: BestOffer) {
                         Text(
                             text = "${bestOffer.price.toMoneyString()} so'm",
                             style = MaterialTheme.typography.titleLarge,
-                            color = MaterialTheme.colorScheme.onBackground
+                            color = MaterialTheme.colorScheme.onBackground,
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .wrapContentHeight(),
+                            textAlign = TextAlign.End
                         )
                     }
                 }
