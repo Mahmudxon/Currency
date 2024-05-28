@@ -17,5 +17,6 @@ data class CurrencyDetailsState(
     val localValue: String = "",
     val foreignValue: String = "",
     val bestOfferForSelling: BestOffer = BestOffer(),
-    val bestOfferForBuying: BestOffer = BestOffer()
+    val bestOfferForBuying: BestOffer = BestOffer(),
+    val showBankPrice: BankPrice? = null
 )

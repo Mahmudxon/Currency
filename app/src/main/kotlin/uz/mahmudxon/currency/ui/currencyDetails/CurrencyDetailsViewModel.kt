@@ -144,6 +144,17 @@ class CurrencyDetailsViewModel @Inject constructor(
                 )
             }
 
+            is CurrencyDetailsEvent.CurrencyPriceClick -> {
+                _state.value = _state.value.copy(
+                    showBankPrice = event.price
+                )
+            }
+
+            CurrencyDetailsEvent.OnCurrencyInfoDismissRequest -> {
+                _state.value = _state.value.copy(
+                    showBankPrice = null
+                )
+            }
         }
     }
 }
