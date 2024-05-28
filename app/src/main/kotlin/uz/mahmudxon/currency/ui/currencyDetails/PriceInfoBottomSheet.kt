@@ -47,9 +47,11 @@ fun PriceInfoBottomSheet(
             AsyncImage(
                 model = bankPrice.bank.logo,
                 contentDescription = bankPrice.bank.name,
-                modifier = Modifier.size(24.dp)
+                modifier = Modifier
+                    .size(56.dp)
+                    .padding(16.dp)
             )
-            
+
             Text(
                 text = bankPrice.bank.name,
                 style = MaterialTheme.typography.titleMedium,

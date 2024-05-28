@@ -1,5 +1,7 @@
 package uz.mahmudxon.currency.ui.currencyDetails
 
+import android.content.Intent
+import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -41,7 +44,7 @@ fun CurrencyDetailsScreen(
     onEvent: (CurrencyDetailsEvent) -> Unit,
     onBackClick: () -> Unit
 ) {
-
+    val context = LocalContext.current
     if (state.error != -1) {
         NetworkErrorScreenWithButton {
             onEvent.invoke(CurrencyDetailsEvent.Refresh)
@@ -145,7 +148,8 @@ fun CurrencyDetailsScreen(
             onDismissRequest = {
                 onEvent.invoke(CurrencyDetailsEvent.OnCurrencyInfoDismissRequest)
             }) {
-            // Goto Web Site
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it))
+            context.startActivity(intent)
         }
     }
 }
