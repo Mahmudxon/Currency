@@ -28,17 +28,20 @@ class GetCommercialBankData(
         // 6 hour
         val isLocalDataActual =
             System.currentTimeMillis() - lastUpdate < 6 * 60 * 60 * 1000 // && !BuildConfig.DEBUG
+
+        val lastOurCheck = System.currentTimeMillis() - lastUpdate < 1 * 60 * 60 * 1000
         if (isLocalDataActual) {
             val response = dao.getAll(code).map { mapper.mapToDomain(it) }
             emit(DataState.data(response))
-        } else {
-            val prices = collectBankAsync()
-            if (prices.isNotEmpty()) {
-                dao.deleteAll()
-                dao.insert(prices.map { mapper.mapFromDomain(it) })
-                prefs.save(PrefKeys.priceUpdate, System.currentTimeMillis())
-                emit(DataState.data(prices.filter { it.currencyCode == code }))
-            }
+            if (lastOurCheck)
+                return@flow
+        }
+        val prices = collectBankAsync()
+        if (prices.isNotEmpty()) {
+            dao.deleteAll()
+            dao.insert(prices.map { mapper.mapFromDomain(it) })
+            prefs.save(PrefKeys.priceUpdate, System.currentTimeMillis())
+            emit(DataState.data(prices.filter { it.currencyCode == code }))
         }
     }.catch {
         emit(DataState.error(Exception(it)))
