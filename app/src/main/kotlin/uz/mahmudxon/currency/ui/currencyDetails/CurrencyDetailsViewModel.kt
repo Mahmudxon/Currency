@@ -60,10 +60,15 @@ class CurrencyDetailsViewModel @Inject constructor(
                         sellingLoading = it.isLoading
                     )
                     it.data?.let {
+                        val prices = it.filter {
+                            // Remove trash values
+                            (it.buy < (_state.value.currency?.rate ?: Double.MAX_VALUE)
+                                    && it.sell > (_state.value.currency?.rate ?: 0.0))
+                        }.sortedBy { it.bank.name }
                         _state.value = _state.value.copy(
-                            bankPrices = it.sortedBy { it.bank.name }
+                            bankPrices = prices
                         )
-                        findBestOffer(it)
+                        findBestOffer(prices)
                     }
                 }
                 .launchIn(CoroutineScope(IO))
