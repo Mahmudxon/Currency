@@ -29,6 +29,7 @@ import uz.mahmudxon.currency.data.network.mk.MkBank
 import uz.mahmudxon.currency.data.network.nbu.Nbu
 import uz.mahmudxon.currency.data.network.ofb.Ofb
 import uz.mahmudxon.currency.data.network.sqb.Sqb
+import uz.mahmudxon.currency.data.network.tengebank.TengeBank
 import uz.mahmudxon.currency.data.network.turonbank.TuronBank
 import uz.mahmudxon.currency.data.network.xb.XalqBanki
 import uz.mahmudxon.currency.data.repo.GetCommercialBankData
@@ -110,9 +111,9 @@ object AppModule {
     @IntoSet
     fun provideTuronBank(networkClient: NetworkClient): CommercialBank = TuronBank(networkClient)
 
-    @Provides
-    @IntoSet
-    fun provideDavrBank(networkClient: NetworkClient): CommercialBank = DavrBank(networkClient)
+//    @Provides
+//    @IntoSet
+//    fun provideDavrBank(networkClient: NetworkClient): CommercialBank = DavrBank(networkClient)
 
     @Provides
     @IntoSet
@@ -146,4 +147,9 @@ object AppModule {
     @Provides
     @IntoSet
     fun provideInfinitBank(networkClient: NetworkClient): CommercialBank = InfinBank(networkClient)
+
+    @Provides
+    @IntoSet
+    fun provideTengeBank(networkClient: NetworkClient): CommercialBank = TengeBank(networkClient)
+
 }
