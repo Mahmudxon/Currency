@@ -11,7 +11,11 @@ class InfinBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.InfinBank.ordinal,
             name = "InfinBank",
             website = "https://infinbank.com/",
-            logo = "https://infinbank.com/local/templates/infinbank/favicon/apple-touch-icon.png"
+            logo = "https://infinbank.com/local/templates/infinbank/favicon/apple-touch-icon.png",
+            address = "100029, Toshkent shahri, Mirobod tumani, T. Shevchenko ko‘chasi, 1-uy",
+            phone = "140-50-60",
+            licens = "75, 15.04.2023",
+            inn = "206942764"
         )
     override val url: String
         get() = "https://infinbank.com/uz/private/exchange-rates/"

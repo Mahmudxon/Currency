@@ -16,7 +16,11 @@ class Sqb(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.SQB.ordinal,
             name = "SQB",
             website = "https://www.sqb.uz/",
-            logo = "https://www.sqb.uz/local/templates/sqb/images/favicon.png"
+            logo = "https://www.sqb.uz/local/templates/sqb/images/favicon.png",
+            address = "100000, Toshkent shahri, Yunusobod tumani, Shahrisabz ko‘chasi, 3-uy",
+            phone = "(8 371) 120-36-32",
+            licens = "17, 25.06.1991",
+            inn = "200833707"
         )
     override val url: String
         get() = "https://www.sqb.uz/api/site-kurs-api/"

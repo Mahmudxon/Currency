@@ -13,7 +13,11 @@ class Nbu(
             id = Bank.Id.NBU.ordinal,
             name = "NBU",
             website = "https://nbu.uz/",
-            logo = "file:///android_asset/bank/nbu.webp"
+            logo = "file:///android_asset/bank/nbu.webp",
+            address = "100084, Toshkent shahri, Yunusobod tumani, Amir Temur ko‘chasi, 101",
+            phone = "78-148-00-10",
+            licens = "22, 25.10.1991",
+            inn = "200836354"
         )
     override val url: String
         get() = "https://nbu.uz/uz/exchange-rates/"

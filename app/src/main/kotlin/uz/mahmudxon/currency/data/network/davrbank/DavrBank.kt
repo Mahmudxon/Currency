@@ -15,7 +15,11 @@ class DavrBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.DavrBank.ordinal,
             name = "Davr Bank",
             website = "https://davrbank.uz/",
-            logo = "https://davrbank.uz/assets/favicons/favicon-32x32.png"
+            logo = "https://davrbank.uz/assets/favicons/favicon-32x32.png",
+            address = "100021, Toshkent shahri, Shayxontoxur tumani, Navoiy-Zarqaynar ko‘chasi, Blok “A”",
+            phone = "248 35 12",
+            licens = "71, 29.09.2001",
+            inn = "203709707"
         )
     override val url: String
         get() = "https://apis.davrbank.uz/api/v1/currency/?format=json"

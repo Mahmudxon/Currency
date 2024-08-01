@@ -11,7 +11,11 @@ class TuronBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.TURON.ordinal,
             name = "Turon Bank",
             website = "https://turonbank.uz/",
-            logo = "https://turonbank.uz/favicons/apple-touch-icon.png"
+            logo = "https://turonbank.uz/favicons/apple-touch-icon.png",
+            address = "100011, Toshkent shahri, Shayxontoxur tumani, Abay ko‘chasi, 4a",
+            phone = "144-60-00",
+            licens = "8, 20.09.1993",
+            inn = "201055108"
         )
     override val url: String
         get() = "https://turonbank.uz/uz/services/exchange-rates/"

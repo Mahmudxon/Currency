@@ -14,7 +14,11 @@ class XalqBanki(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.XB.ordinal,
             name = "Xalq Banki",
             website = "https://xb.uz/",
-            logo = "https://xb.uz/favicon.ico"
+            logo = "https://xb.uz/favicon.ico",
+            address = "100096, Toshkent shahri, Chilonzor tumani, Qatortol ko‘chasi, 46-uy",
+            phone = " 1106",
+            licens = "25, 22.10.1993",
+            inn = "207215726"
         )
     override val url: String
         get() = "https://xb.uz/api/v1/external/client/default?_f=json&_l=uz"

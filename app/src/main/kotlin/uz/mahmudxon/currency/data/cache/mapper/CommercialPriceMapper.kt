@@ -11,7 +11,11 @@ class CommercialPriceMapper : DomainMapper<CommercialPriceTable, BankPrice> {
             id = type.bankId,
             name = type.bankName,
             logo = type.bankLogo,
-            website = type.bankWebsite
+            website = type.bankWebsite,
+            address = type.bankAddress,
+            phone = type.bankPhone,
+            licens = type.bankLicens,
+            inn = type.bankInn
         )
         return BankPrice(
             bank = bank,
@@ -31,7 +35,11 @@ class CommercialPriceMapper : DomainMapper<CommercialPriceTable, BankPrice> {
             currencyCode = type.currencyCode,
             date = type.date,
             buy = type.buy,
-            sell = type.sell
+            sell = type.sell,
+            bankAddress = type.bank.address,
+            bankPhone = type.bank.phone,
+            bankLicens = type.bank.licens,
+            bankInn = type.bank.inn
         )
     }
 }

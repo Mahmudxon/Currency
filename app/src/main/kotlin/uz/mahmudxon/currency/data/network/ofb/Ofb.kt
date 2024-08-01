@@ -11,7 +11,11 @@ class Ofb(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.Ofb.ordinal,
             name = "OFB",
             logo = "https://ofb.uz/local/dist/apple-touch-icon.png",
-            website = "https://ofb.uz/"
+            website = "https://ofb.uz/",
+            address = "100029, Toshkent shahri, Mirzo Ulug'bek tumani, Osiyo ko‘chasi, 5-uy",
+            phone = "200-88-99",
+            licens = "81, 19.06.2010",
+            inn = "207086151"
         )
     override val url: String
         get() = "https://ofb.uz/uz/about/kurs-obmena-valyut/"

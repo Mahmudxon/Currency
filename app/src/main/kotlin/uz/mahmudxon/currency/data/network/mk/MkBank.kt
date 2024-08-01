@@ -11,7 +11,11 @@ class MkBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.MkBank.ordinal,
             name = "MKBank",
             website = "https://mkbank.uz/",
-            logo = "https://mkbank.uz/favicon.ico?v3"
+            logo = "https://mkbank.uz/favicon.ico?v3",
+            address = "100047, Toshkent shahri, Mirobod tumani, Amir Temur Shox ko‘chasi, 4-uy",
+            phone = "273-04-40",
+            licens = "37, 28.04.1993",
+            inn = "200547792"
         )
     override val url: String
         get() = "https://mkbank.uz/uz/services/exchange-rates/"

@@ -12,7 +12,11 @@ class KapitalBank(
             id = Bank.Id.KAPITAL.ordinal,
             name = "Kapital Bank",
             website = "https://kapitalbank.uz/",
-            logo = "https://www.kapitalbank.uz/favicon.ico?v2"
+            logo = "https://www.kapitalbank.uz/favicon.ico?v2",
+            address = "100047, Toshkent shahri, Yunusobod tumani, Sayilgox ko‘chasi, 7",
+            phone = "200-15-15",
+            licens = "69, 07.04.2001",
+            inn = "203591761"
         )
     override val url: String
         get() = "https://www.kapitalbank.uz/uz/services/exchange-rates/"

@@ -12,7 +12,11 @@ data class CommercialPriceTable(
     val bankId: Int,
     val bankName: String,
     val bankLogo: String,
-    val bankWebsite: String
+    val bankWebsite: String,
+    val bankAddress: String,
+    val bankPhone: String,
+    val bankLicens: String,
+    val bankInn: String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

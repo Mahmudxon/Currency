@@ -15,7 +15,11 @@ class AgroBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.AgroBank.ordinal,
             name = "AgroBank",
             logo = "https://agrobank.uz/f/dist/favicon.ico",
-            website = "https://agrobank.uz/"
+            website = "https://agrobank.uz/",
+            address = "100011, Toshkent shahri, Shayxontoxur tumani, Botir Zokirov ko‘chasi, 2A",
+            phone = "150-67-65",
+            licens = "78, 30.04.2009",
+            inn = "201200124"
         )
     override val url: String
         get() = "https://agrobank.uz/api/v1/?action=pages&code=uz%2Fperson%2Fexchange_rates"

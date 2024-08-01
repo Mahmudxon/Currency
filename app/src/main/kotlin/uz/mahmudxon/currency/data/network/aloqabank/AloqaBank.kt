@@ -11,7 +11,11 @@ class AloqaBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.ALOQA.ordinal,
             name = "Aloqa Bank",
             website = "https://aloqabank.uz/",
-            logo = "https://aloqabank.uz/favicons/favicon-32x32.png"
+            logo = "https://aloqabank.uz/favicons/favicon-32x32.png",
+            address = "100047, Toshkent shahri, Mirobod tumani, Amir Temur shoh ko‘chasi, 4-uy",
+            phone = " 230-77-77",
+            licens = "48, 22.03.1995",
+            inn = "200829053"
         )
     override val url: String
         get() = "https://aloqabank.uz/uz/services/exchange-rates/"

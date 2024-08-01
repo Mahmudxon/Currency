@@ -11,7 +11,11 @@ class TengeBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.TengeBank.ordinal,
             name = "Tenge Bank",
             logo = "https://tengebank.uz/themes/halyk/assets/apple-touch-icon.png",
-            website = "https://tengebank.uz/"
+            website = "https://tengebank.uz/",
+            address = "100007, Toshkent shahri, Yashnobod tumani, Parkent ko‘chasi, 66-uy",
+            phone = "1245",
+            licens = "85, 18.05.2019",
+            inn = "207297973"
         )
     override val url: String
         get() = "https://tengebank.uz/uz/exchange-rates"

@@ -14,13 +14,13 @@ import uz.mahmudxon.currency.data.cache.dao.CommercialPriceDao
 import uz.mahmudxon.currency.data.cache.dao.CurrencyDao
 import uz.mahmudxon.currency.data.cache.mapper.CommercialPriceMapper
 import uz.mahmudxon.currency.data.cache.mapper.CurrencyMapper
+import uz.mahmudxon.currency.data.cache.migration.MIGRATION_1_2
 import uz.mahmudxon.currency.data.cache.prefs.Prefs
 import uz.mahmudxon.currency.data.network.NetworkClient
 import uz.mahmudxon.currency.data.network.agrobank.AgroBank
 import uz.mahmudxon.currency.data.network.aloqabank.AloqaBank
 import uz.mahmudxon.currency.data.network.cbu.Cbu
 import uz.mahmudxon.currency.data.network.commercial.CommercialBank
-import uz.mahmudxon.currency.data.network.davrbank.DavrBank
 import uz.mahmudxon.currency.data.network.hamkorbank.HamkorBank
 import uz.mahmudxon.currency.data.network.infinbank.InfinBank
 import uz.mahmudxon.currency.data.network.ipotekabank.IpotekaBank
@@ -50,6 +50,7 @@ object AppModule {
     @Provides
     fun provideDbConfig(@ApplicationContext context: Context): CurrencyDb =
         Room.databaseBuilder(context, CurrencyDb::class.java, "currency.db")
+            .addMigrations(MIGRATION_1_2)
             .allowMainThreadQueries()
             .build()
 

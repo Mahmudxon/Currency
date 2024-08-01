@@ -12,7 +12,11 @@ class IpotekaBank(networkClient: NetworkClient) : CommercialBank(networkClient) 
             id = Bank.Id.IpotekaBank.ordinal,
             name = "IpotekaBank",
             website = "https://ipoteka.uz/",
-            logo = "https://www.ipotekabank.uz/bitrix/templates/corp_services_blue_copy/favicon.ico"
+            logo = "https://www.ipotekabank.uz/bitrix/templates/corp_services_blue_copy/favicon.ico",
+            address = "00000, Toshkent shahri, Shahrisabz ko‘chasi, 30-uy",
+            phone = "+998 (71) 150-89-56",
+            licens = "74, 30.04.2005",
+            inn = "202858483"
         )
     override val url: String
         get() = "https://ipotekabank.uz/uz/currency/"

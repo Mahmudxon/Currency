@@ -12,7 +12,11 @@ class HamkorBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
             id = Bank.Id.HamkorBank.ordinal,
             name = "Hamkor Bank",
             website = "https://www.hamkorbank.uz/",
-            logo = "file:///android_asset/bank/hamkorbank.webp"
+            logo = "file:///android_asset/bank/hamkorbank.webp",
+            address = "170119, Andijon shahri, Bobur shoh ko‘chasi, 85-uy",
+            phone = "1-200-200",
+            licens = "64, 29.07.2000",
+            inn = "200242936"
         )
     override val url: String
         get() = "https://hamkorbank.uz/uz/exchange-rate/"

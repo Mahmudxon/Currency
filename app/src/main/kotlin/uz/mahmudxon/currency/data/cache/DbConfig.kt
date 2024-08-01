@@ -11,7 +11,7 @@ import uz.mahmudxon.currency.data.cache.tables.CurrencyTable
 
 @Database(
     entities = [CurrencyTable::class, ChartTable::class, CommercialPriceTable::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class CurrencyDb : RoomDatabase() {
