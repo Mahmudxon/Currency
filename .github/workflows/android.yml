@@ -30,7 +30,7 @@ jobs:
       run: echo "APK_NAME=$(ls app/build/outputs/apk/release/*.apk)" >> $GITHUB_ENV
 
     - name: Upload APK as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Valyuta-Kurslari-APK
         path: ${{ env.APK_NAME }}
