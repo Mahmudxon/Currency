@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: set up JDK 21
+    - name: Set up JDK 21
       uses: actions/setup-java@v4
       with:
         java-version: '21'
@@ -22,15 +22,25 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build APK with Gradle
-      run: ./gradlew assembleRelease
+    - name: Build APK and AAB with Gradle
+      run: |
+        ./gradlew assembleRelease
+        ./gradlew bundleRelease
 
-    - name: Capture APK name
-      id: apk_name
-      run: echo "APK_NAME=$(ls app/build/outputs/apk/release/*.apk)" >> $GITHUB_ENV
+    - name: Capture APK and AAB file names
+      id: artifact_files
+      run: |
+        echo "APK_FILE=$(ls app/build/outputs/apk/release/*.apk)" >> $GITHUB_ENV
+        echo "AAB_FILE=$(ls app/build/outputs/bundle/release/*.aab)" >> $GITHUB_ENV
 
     - name: Upload APK as artifact
       uses: actions/upload-artifact@v4
       with:
         name: Valyuta-Kurslari-APK
-        path: ${{ env.APK_NAME }}
+        path: ${{ env.APK_FILE }}
+
+    - name: Upload AAB as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Valyuta-Kurslari-AAB
+        path: ${{ env.AAB_FILE }}
