@@ -1,8 +1,7 @@
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
@@ -17,15 +16,15 @@ val PLAY_KEY_PASSWORD: String by project
 
 android {
     namespace = "uz.mahmudxon.currency"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "uz.mahmudxon.currency"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 2007
         versionName = "2.0.7"
-        archivesName.set("Valyuta Kurslari V$versionName")
+        setProperty("archivesBaseName", "Valyuta Kurslari V$versionName")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -143,9 +142,11 @@ dependencies {
     // Splash
     implementation(libs.androidx.core.splashscreen)
 
-    // navigation
-    implementation(libs.androidx.hilt.hilt.navigation)
+    // androidx-hilt
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.work)
+    ksp(libs.androidx.hilt.compiler)
 
     // hilt
     implementation(libs.google.dagger.hilt.android)
@@ -173,4 +174,10 @@ dependencies {
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
+
+    // WorkManager
+    implementation(libs.androidx.work.runtime.ktx)
+
+    // Glance
+    implementation (libs.androidx.glance.material3)
 }

@@ -5,13 +5,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import kotlinx.coroutines.CoroutineScope
-import uz.mahmudxon.currency.model.Currency
 import uz.mahmudxon.currency.ui.currencyDetails.CurrencyDetailsScreen
 import uz.mahmudxon.currency.ui.currencyDetails.CurrencyDetailsViewModel
 import uz.mahmudxon.currency.ui.currencyList.CurrencyListScreen
@@ -38,13 +35,7 @@ fun ApplicationNavGraph(
         }
 
         composable(
-            Routes.Details.route, arguments = listOf(
-                navArgument("currency") {
-                    type = NavType.ParcelableType(
-                        Currency::class.java
-                    )
-                },
-            )
+            Routes.Details.route
         ) {
             val vm = hiltViewModel<CurrencyDetailsViewModel>()
             val detailsState = vm.state.collectAsState()

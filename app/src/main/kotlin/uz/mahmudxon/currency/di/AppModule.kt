@@ -21,6 +21,7 @@ import uz.mahmudxon.currency.data.network.agrobank.AgroBank
 import uz.mahmudxon.currency.data.network.aloqabank.AloqaBank
 import uz.mahmudxon.currency.data.network.cbu.Cbu
 import uz.mahmudxon.currency.data.network.commercial.CommercialBank
+import uz.mahmudxon.currency.data.network.davrbank.DavrBank
 import uz.mahmudxon.currency.data.network.hamkorbank.HamkorBank
 import uz.mahmudxon.currency.data.network.infinbank.InfinBank
 import uz.mahmudxon.currency.data.network.ipotekabank.IpotekaBank
@@ -112,9 +113,9 @@ object AppModule {
     @IntoSet
     fun provideTuronBank(networkClient: NetworkClient): CommercialBank = TuronBank(networkClient)
 
-//    @Provides
-//    @IntoSet
-//    fun provideDavrBank(networkClient: NetworkClient): CommercialBank = DavrBank(networkClient)
+    @Provides
+    @IntoSet
+    fun provideDavrBank(networkClient: NetworkClient): CommercialBank = DavrBank(networkClient)
 
     @Provides
     @IntoSet
