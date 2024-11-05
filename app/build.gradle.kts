@@ -22,8 +22,8 @@ android {
         applicationId = "uz.mahmudxon.currency"
         minSdk = 24
         targetSdk = 35
-        versionCode = 2007
-        versionName = "2.0.7"
+        versionCode = 2008
+        versionName = "2.0.8"
         setProperty("archivesBaseName", "Valyuta Kurslari V$versionName")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -130,7 +130,6 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -138,6 +137,13 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Material 3
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.adaptive)
+    implementation(libs.androidx.adaptive.layout)
+    implementation(libs.androidx.adaptive.navigation)
+
 
     // Splash
     implementation(libs.androidx.core.splashscreen)

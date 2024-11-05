@@ -15,6 +15,8 @@ import uz.mahmudxon.currency.data.cache.dao.CurrencyDao
 import uz.mahmudxon.currency.data.cache.mapper.CommercialPriceMapper
 import uz.mahmudxon.currency.data.cache.mapper.CurrencyMapper
 import uz.mahmudxon.currency.data.cache.migration.MIGRATION_1_2
+import uz.mahmudxon.currency.data.cache.migration.MIGRATION_2_3
+import uz.mahmudxon.currency.data.cache.migration.MIGRATION_3_4
 import uz.mahmudxon.currency.data.cache.prefs.Prefs
 import uz.mahmudxon.currency.data.network.NetworkClient
 import uz.mahmudxon.currency.data.network.agrobank.AgroBank
@@ -51,7 +53,11 @@ object AppModule {
     @Provides
     fun provideDbConfig(@ApplicationContext context: Context): CurrencyDb =
         Room.databaseBuilder(context, CurrencyDb::class.java, "currency.db")
-            .addMigrations(MIGRATION_1_2)
+            .addMigrations(
+                MIGRATION_1_2,
+                MIGRATION_2_3,
+                MIGRATION_3_4
+            )
             .allowMainThreadQueries()
             .build()
 

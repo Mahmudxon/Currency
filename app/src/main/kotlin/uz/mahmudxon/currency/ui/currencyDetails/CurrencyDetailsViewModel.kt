@@ -1,6 +1,5 @@
 package uz.mahmudxon.currency.ui.currencyDetails
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -15,26 +14,29 @@ import uz.mahmudxon.currency.model.Bank
 import uz.mahmudxon.currency.model.BankPrice
 import uz.mahmudxon.currency.model.BestOffer
 import uz.mahmudxon.currency.model.Currency
+import uz.mahmudxon.currency.util.dlog
 import uz.mahmudxon.currency.util.moneyStringToDouble
 import uz.mahmudxon.currency.util.toMoneyString
 import javax.inject.Inject
 
 @HiltViewModel
 class CurrencyDetailsViewModel @Inject constructor(
-    savedStateHandle: SavedStateHandle,
     private val getCurrencyChart: GetCurrencyChart,
     private val getCommercialBankData: GetCommercialBankData
 ) : ViewModel() {
-    private val _state = MutableStateFlow(
-        CurrencyDetailsState(
-            currency = savedStateHandle.get<Currency>("currency"),
-            localValue = "${savedStateHandle.get<Currency>("currency")?.rate?.toMoneyString()}",
-            foreignValue = "1"
-        )
-    )
+    private val _state = MutableStateFlow(CurrencyDetailsState())
     val state = _state.asStateFlow()
 
-    init {
+    fun getCurrency(currency: Currency) {
+        if (_state.value.currency?.code == currency.code) return
+        _state.value = _state.value.copy(
+            currency = currency,
+            localValue = currency.rate.toMoneyString(),
+            foreignValue = "1",
+            chart = emptyList(),
+            bankPrices = emptyList(),
+            sellingAvailable = false
+        )
         getData()
     }
 
@@ -43,9 +45,14 @@ class CurrencyDetailsViewModel @Inject constructor(
             .onEach {
                 _state.value = _state.value.copy(isLoading = it.isLoading)
                 it.data?.let { data ->
+                    val step = if (data.size > 300) data.size / 300 else 1
                     _state.value = _state.value.copy(
-                        chart = data.takeLast(365)
+                        chart = data.filterIndexed { index, _ ->
+                            if (index == data.size - 1) true // last item
+                            else index % step == 0
+                        }
                     )
+                    dlog(_state.value.chart)
                 }
                 _state.value = _state.value.copy(
                     error = if (it.error == null) -1 else 1
@@ -61,11 +68,6 @@ class CurrencyDetailsViewModel @Inject constructor(
                     )
                     it.data?.let {
                         val prices = it
-//                            .filter {
-//                            // Remove trash values
-//                            (it.buy < (_state.value.currency?.rate ?: Double.MAX_VALUE)
-//                                    && it.sell > (_state.value.currency?.rate ?: 0.0))
-//                        }
                             .sortedBy { it.bank.name }
                         _state.value = _state.value.copy(
                             bankPrices = prices
@@ -74,6 +76,8 @@ class CurrencyDetailsViewModel @Inject constructor(
                     }
                 }
                 .launchIn(CoroutineScope(IO))
+        } else {
+            _state.value = _state.value.copy(sellingAvailable = false)
         }
     }
 

@@ -15,6 +15,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,7 +26,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -42,6 +44,7 @@ import uz.mahmudxon.currency.ui.component.error.NetworkErrorScreenWithButton
 fun CurrencyDetailsScreen(
     state: CurrencyDetailsState,
     onEvent: (CurrencyDetailsEvent) -> Unit,
+    isCloseIcon: Boolean,
     onBackClick: () -> Unit
 ) {
     val context = LocalContext.current
@@ -62,9 +65,10 @@ fun CurrencyDetailsScreen(
             thickness = 1.dp
         )
     )
+
     LazyColumn {
         item {
-            ToolbarDetailsScreen(state, onBackClick)
+            ToolbarDetailsScreen(state, isCloseIcon, onBackClick)
         }
         item {
             LineChart(
@@ -73,7 +77,7 @@ fun CurrencyDetailsScreen(
                     .fillMaxWidth()
                     .height(250.dp)
                     .padding(start = 24.dp, top = 8.dp, end = 36.dp, bottom = 8.dp),
-                animation = simpleChartAnimation(),
+               // animation = simpleChartAnimation(),
                 pointDrawer = NoPointDrawer,
                 lineShader = GradientLineShader(
                     colors = listOf(MaterialTheme.colorScheme.primaryContainer, Color.Transparent)
@@ -88,7 +92,8 @@ fun CurrencyDetailsScreen(
                     labelTextColor = MaterialTheme.colorScheme.onBackground,
                     labelRatio = 5,
                     labelValueFormatter = {
-                        if (it > 100) {
+                        if (it < 0) "0"
+                        else if (it > 100) {
                             val value = it.toInt()
                             "$value"
                         } else "$it"
@@ -134,7 +139,7 @@ fun CurrencyDetailsScreen(
                 )
             }
         }
-        items(state.bankPrices, key = { it.bank.id }) {
+        items(state.bankPrices) {
             BankCurrencyPriceItemView(item = it) {
                 onEvent.invoke(CurrencyDetailsEvent.CurrencyPriceClick(it))
             }
@@ -155,7 +160,11 @@ fun CurrencyDetailsScreen(
 }
 
 @Composable
-fun ToolbarDetailsScreen(state: CurrencyDetailsState, onBackClick: () -> Unit) {
+fun ToolbarDetailsScreen(
+    state: CurrencyDetailsState,
+    isCloseIcon: Boolean,
+    onBackClick: () -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -163,7 +172,7 @@ fun ToolbarDetailsScreen(state: CurrencyDetailsState, onBackClick: () -> Unit) {
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            painter = painterResource(id = R.drawable.ic_arrow_back),
+            imageVector = if (isCloseIcon) Icons.Filled.Close else Icons.AutoMirrored.Filled.ArrowBack,
             contentDescription = "Back",
             tint = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier

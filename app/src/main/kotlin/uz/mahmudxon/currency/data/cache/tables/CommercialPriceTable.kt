@@ -1,9 +1,13 @@
 package uz.mahmudxon.currency.data.cache.tables
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "commercial_price")
+@Entity(
+    tableName = "commercial_price",
+    indices = [Index(value = ["bankId", "currencyCode"], unique = true)]
+)
 data class CommercialPriceTable(
     val currencyCode: String,
     val date: String,
@@ -20,5 +24,4 @@ data class CommercialPriceTable(
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
-
 }

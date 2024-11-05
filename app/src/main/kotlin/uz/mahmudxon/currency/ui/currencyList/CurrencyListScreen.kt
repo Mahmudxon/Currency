@@ -133,7 +133,6 @@ fun CurrencySearchBar(modifier: Modifier, searchQuery: String, onEdit: (String) 
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onClick: () -> Unit) {
     val iconPath = "file:///android_asset/flags/${item.code.lowercase()}.webp"
@@ -141,7 +140,10 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 4.dp)
-            .animateItemPlacement()
+            .animateItem(
+                fadeInSpec = null,
+                fadeOutSpec = null
+            )
             .clickable { onClick.invoke() },
         elevation = CardDefaults.cardElevation(0.dp),
         shape = RoundedCornerShape(8.dp),

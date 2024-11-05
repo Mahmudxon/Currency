@@ -139,13 +139,13 @@ fun PriceInfoBottomSheet(
                 modifier = Modifier
                     .fillMaxWidth(0.5f),
                 colors = ButtonDefaults.buttonColors().copy(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                    containerColor = MaterialTheme.colorScheme.primary
                 )
             ) {
                 Text(
                     text = stringResource(id = R.string.goto_bank_website),
                     style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onBackground
+                    color = MaterialTheme.colorScheme.onPrimary
                 )
             }
 

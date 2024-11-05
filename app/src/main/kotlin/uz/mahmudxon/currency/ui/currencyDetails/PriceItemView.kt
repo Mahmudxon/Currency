@@ -33,7 +33,10 @@ fun LazyItemScope.BankCurrencyPriceItemView(item: BankPrice, onClick: () -> Unit
             .fillMaxWidth()
             .height(110.dp)
             .padding(horizontal = 16.dp, vertical = 4.dp)
-            .animateItemPlacement()
+            .animateItem(
+                fadeInSpec = null,
+                fadeOutSpec = null
+            )
             .clickable { onClick.invoke() },
         elevation = CardDefaults.cardElevation(0.dp),
         shape = RoundedCornerShape(8.dp),
