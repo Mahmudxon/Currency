@@ -1,7 +1,6 @@
 package uz.mahmudxon.currency.ui.currencyList
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -40,6 +39,7 @@ import uz.mahmudxon.currency.util.toMoneyString
 @Composable
 fun CurrencyListScreen(
     state: CurrencyListState,
+    selectedCurrency: Currency?,
     onEvent: (CurrencyListEvent) -> Unit,
     navigateDetails: (Currency) -> Unit
 ) {
@@ -76,7 +76,10 @@ fun CurrencyListScreen(
 
                 items(state.currencies, key = { it.code })
                 {
-                    CurrencyItem(item = it) {
+                    CurrencyItem(
+                        item = it,
+                        isSelected = it.code == selectedCurrency?.code
+                    ) {
                         onEvent.invoke(CurrencyListEvent.SelectCurrency(it))
                         navigateDetails.invoke(it)
                     }
@@ -136,6 +139,10 @@ fun CurrencySearchBar(modifier: Modifier, searchQuery: String, onEdit: (String) 
 @Composable
 fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onClick: () -> Unit) {
     val iconPath = "file:///android_asset/flags/${item.code.lowercase()}.webp"
+    val backgroundColor =
+        if (isSelected) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant
+    val contentColor =
+        if (isSelected) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -148,8 +155,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
         elevation = CardDefaults.cardElevation(0.dp),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (isSelected) MaterialTheme.colorScheme.primaryContainer
-            else MaterialTheme.colorScheme.surfaceVariant
+            containerColor = backgroundColor
         )
     ) {
         Column(
@@ -158,7 +164,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
                 .padding(16.dp)
         ) {
             val icon: Int
-            val color: Color
+            var color: Color
             val c = item.diff.firstOrNull() ?: ' '
             when (c) {
                 '+' -> {
@@ -172,10 +178,12 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
                 }
 
                 else -> {
-                    color = MaterialTheme.colorScheme.secondary
+                    color = contentColor
                     icon = R.drawable.ic_trending_flat
                 }
             }
+
+            if (isSelected) color = contentColor.copy(alpha = 0.6f)
 
             Row(
                 modifier = Modifier
@@ -192,7 +200,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
                 Text(
                     text = item.code,
                     style = MaterialTheme.typography.titleMedium,
-                    color = MaterialTheme.colorScheme.onBackground,
+                    color = contentColor,
                     modifier = Modifier
                         .weight(1f)
                         .padding(start = 16.dp),
@@ -204,7 +212,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
             Text(
                 text = item.name,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onBackground,
+                color = contentColor,
             )
             Row(
                 modifier = Modifier
@@ -214,7 +222,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
                 Text(
                     text = "${item.rate.toMoneyString()} so'm",
                     style = MaterialTheme.typography.titleLarge,
-                    color = MaterialTheme.colorScheme.onBackground,
+                    color = contentColor,
                     modifier = Modifier.weight(1f)
                 )
                 Text(

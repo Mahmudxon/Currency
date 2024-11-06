@@ -10,7 +10,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
-import uz.mahmudxon.currency.model.Currency
 import uz.mahmudxon.currency.ui.currencyDetails.CurrencyDetailsScreen
 import uz.mahmudxon.currency.ui.currencyDetails.CurrencyDetailsViewModel
 import uz.mahmudxon.currency.ui.currencyList.CurrencyListScreen
@@ -19,9 +18,14 @@ import uz.mahmudxon.currency.ui.currencyList.CurrencyListViewmodel
 @OptIn(ExperimentalMaterial3AdaptiveApi::class)
 @Composable
 fun MainScreen() {
-    val navigator = rememberListDetailPaneScaffoldNavigator<Currency>()
+    val navigator = rememberListDetailPaneScaffoldNavigator<Nothing>()
+    val mainViewModel = hiltViewModel<MainViewModel>()
+    val mainState by mainViewModel.state.collectAsState()
 
     BackHandler(navigator.canNavigateBack()) {
+        if (navigator.currentDestination?.pane == ListDetailPaneScaffoldRole.Detail) {
+            mainViewModel.deselectCurrency()
+        }
         navigator.navigateBack()
     }
 
@@ -35,15 +39,18 @@ fun MainScreen() {
                 CurrencyListScreen(
                     state = state,
                     onEvent = viewModel::onEvent,
+                    selectedCurrency = if (navigator.canNavigateBack()) null
+                    else mainState.selectedCurrency,
                     navigateDetails = { item ->
-                        navigator.navigateTo(ListDetailPaneScaffoldRole.Detail, item)
+                        navigator.navigateTo(ListDetailPaneScaffoldRole.Detail)
+                        mainViewModel.selectCurrency(item)
                     }
                 )
             }
         },
         detailPane = {
             AnimatedPane {
-                navigator.currentDestination?.content?.let {
+                mainState.selectedCurrency?.let {
                     val viewModel = hiltViewModel<CurrencyDetailsViewModel>()
                     viewModel.getCurrency(it)
                     val detailState by viewModel.state.collectAsState()
@@ -51,7 +58,10 @@ fun MainScreen() {
                         state = detailState,
                         onEvent = viewModel::onEvent,
                         isCloseIcon = !navigator.canNavigateBack(),
-                        onBackClick = navigator::navigateBack,
+                        onBackClick = {
+                            navigator.navigateBack()
+                            mainViewModel.deselectCurrency()
+                        },
                     )
                 }
             }
