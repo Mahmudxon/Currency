@@ -151,7 +151,7 @@ object AppModule {
 
     @Provides
     @IntoSet
-    fun provideHammaBank(networkClient: NetworkClient): CommercialBank = HamkorBank(networkClient)
+    fun provideHamkorBank(networkClient: NetworkClient): CommercialBank = HamkorBank(networkClient)
 
     @Provides
     @IntoSet
