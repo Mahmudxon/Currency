@@ -21,6 +21,7 @@ import uz.mahmudxon.currency.data.cache.prefs.Prefs
 import uz.mahmudxon.currency.data.network.NetworkClient
 import uz.mahmudxon.currency.data.network.agrobank.AgroBank
 import uz.mahmudxon.currency.data.network.aloqabank.AloqaBank
+import uz.mahmudxon.currency.data.network.asakabank.AsakaBank
 import uz.mahmudxon.currency.data.network.cbu.Cbu
 import uz.mahmudxon.currency.data.network.commercial.CommercialBank
 import uz.mahmudxon.currency.data.network.davrbank.DavrBank
@@ -160,4 +161,7 @@ object AppModule {
     @IntoSet
     fun provideTengeBank(networkClient: NetworkClient): CommercialBank = TengeBank(networkClient)
 
+    @Provides
+    @IntoSet
+    fun provideAsakaBank(networkClient: NetworkClient): CommercialBank = AsakaBank(networkClient)
 }

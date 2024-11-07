@@ -12,6 +12,9 @@ data class Bank(
     val licens: String
 ) {
     enum class Id {
-        NBU, KAPITAL, AgroBank, ALOQA, TURON, DavrBank, Ofb, MkBank, SQB, IpotekaBank, XB, HamkorBank, InfinBank, TengeBank
+        NBU, KAPITAL, AgroBank, ALOQA,
+        TURON, DavrBank, Ofb, MkBank, SQB,
+        IpotekaBank, XB, HamkorBank, InfinBank,
+        TengeBank, AsakaBank
     }
 }
