@@ -1,19 +1,19 @@
 [versions]
 agp = "8.7.2"
-glanceMaterial3 = "1.1.0"
-kotlin = "2.0.20"
-coreKtx = "1.13.1"
+glanceMaterial3 = "1.1.1"
+kotlin = "2.0.21"
+coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-lifecycleRuntimeKtx = "2.8.6"
-activityCompose = "1.9.2"
-composeBom = "2024.09.03"
+lifecycleRuntimeKtx = "2.8.7"
+activityCompose = "1.9.3"
+composeBom = "2024.10.01"
 splashScreen = "1.0.1"
-navigationVersion = "2.8.2"
+navigationVersion = "2.8.3"
 hiltExt = "1.2.0"
 hilt = "2.51.1"
-ksp = "2.0.20-1.0.25"
+ksp = "2.0.21-1.0.26"
 ktor = "2.3.12"
 serializationJson = "1.6.3"
 chuckerVersion = "4.0.0"
@@ -67,4 +67,5 @@ jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serializati
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
 
