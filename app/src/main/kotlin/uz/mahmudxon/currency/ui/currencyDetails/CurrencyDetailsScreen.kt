@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
@@ -32,7 +33,6 @@ import coil.compose.AsyncImage
 import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.ui.component.chart.LineChart
 import uz.mahmudxon.currency.ui.component.chart.LineChartData
-import uz.mahmudxon.currency.ui.component.chart.common.animation.simpleChartAnimation
 import uz.mahmudxon.currency.ui.component.chart.renderer.line.GradientLineShader
 import uz.mahmudxon.currency.ui.component.chart.renderer.line.SolidLineDrawer
 import uz.mahmudxon.currency.ui.component.chart.renderer.point.NoPointDrawer
@@ -65,83 +65,88 @@ fun CurrencyDetailsScreen(
             thickness = 1.dp
         )
     )
+    Column(
+        modifier = Modifier
+            .safeDrawingPadding()
+    ) {
+        ToolbarDetailsScreen(state, isCloseIcon, onBackClick)
+        LazyColumn {
+            item {
+                LineChart(
+                    linesChartData = listOf(data),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(250.dp)
+                        .padding(start = 24.dp, top = 8.dp, end = 36.dp, bottom = 8.dp),
+                    // animation = simpleChartAnimation(),
+                    pointDrawer = NoPointDrawer,
+                    lineShader = GradientLineShader(
+                        colors = listOf(
+                            MaterialTheme.colorScheme.primaryContainer,
+                            Color.Transparent
+                        )
+                    ),
+                    xAxisDrawer = SimpleXAxisDrawer(
+                        axisLineColor = MaterialTheme.colorScheme.onBackground,
+                        labelTextColor = MaterialTheme.colorScheme.onBackground,
+                        labelRatio = points.size - 1
+                    ),
+                    yAxisDrawer = SimpleYAxisDrawer(
+                        axisLineColor = MaterialTheme.colorScheme.onBackground,
+                        labelTextColor = MaterialTheme.colorScheme.onBackground,
+                        labelRatio = 5,
+                        labelValueFormatter = {
+                            if (it < 0) "0"
+                            else if (it > 100) {
+                                val value = it.toInt()
+                                "$value"
+                            } else "$it"
+                        }
+                    ),
+                    horizontalOffset = 0f
+                )
+            }
 
-    LazyColumn {
-        item {
-            ToolbarDetailsScreen(state, isCloseIcon, onBackClick)
-        }
-        item {
-            LineChart(
-                linesChartData = listOf(data),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(250.dp)
-                    .padding(start = 24.dp, top = 8.dp, end = 36.dp, bottom = 8.dp),
-               // animation = simpleChartAnimation(),
-                pointDrawer = NoPointDrawer,
-                lineShader = GradientLineShader(
-                    colors = listOf(MaterialTheme.colorScheme.primaryContainer, Color.Transparent)
-                ),
-                xAxisDrawer = SimpleXAxisDrawer(
-                    axisLineColor = MaterialTheme.colorScheme.onBackground,
-                    labelTextColor = MaterialTheme.colorScheme.onBackground,
-                    labelRatio = points.size - 1
-                ),
-                yAxisDrawer = SimpleYAxisDrawer(
-                    axisLineColor = MaterialTheme.colorScheme.onBackground,
-                    labelTextColor = MaterialTheme.colorScheme.onBackground,
-                    labelRatio = 5,
-                    labelValueFormatter = {
-                        if (it < 0) "0"
-                        else if (it > 100) {
-                            val value = it.toInt()
-                            "$value"
-                        } else "$it"
+            item {
+                ConvertorView(
+                    currencyName = state.currency?.name ?: "",
+                    currencyCode = state.currency?.code ?: "",
+                    isForeignCurrencyTop = state.isForeignCurrencyTop,
+                    localValue = state.localValue,
+                    foreignValue = state.foreignValue,
+                    localInput = {
+                        onEvent.invoke(CurrencyDetailsEvent.LocalCurrencyInput(it))
+                    },
+                    foreignInput = {
+                        onEvent.invoke(CurrencyDetailsEvent.ForeignCurrencyInput(it))
+                    },
+                    onSwitchClick = {
+                        onEvent.invoke(CurrencyDetailsEvent.SwitchCurrency)
                     }
-                ),
-                horizontalOffset = 0f
-            )
-        }
+                )
+            }
 
-        item {
-            ConvertorView(
-                currencyName = state.currency?.name ?: "",
-                currencyCode = state.currency?.code ?: "",
-                isForeignCurrencyTop = state.isForeignCurrencyTop,
-                localValue = state.localValue,
-                foreignValue = state.foreignValue,
-                localInput = {
-                    onEvent.invoke(CurrencyDetailsEvent.LocalCurrencyInput(it))
-                },
-                foreignInput = {
-                    onEvent.invoke(CurrencyDetailsEvent.ForeignCurrencyInput(it))
-                },
-                onSwitchClick = {
-                    onEvent.invoke(CurrencyDetailsEvent.SwitchCurrency)
+            if (state.sellingAvailable && state.bestOfferForSelling.price != 0.0) {
+                item {
+                    BestOfferView(
+                        title = stringResource(id = R.string.best_offer_for_selling),
+                        bestOffer = state.bestOfferForSelling
+                    )
                 }
-            )
-        }
-
-        if (state.sellingAvailable && state.bestOfferForSelling.price != 0.0) {
-            item {
-                BestOfferView(
-                    title = stringResource(id = R.string.best_offer_for_selling),
-                    bestOffer = state.bestOfferForSelling
-                )
             }
-        }
 
-        if (state.sellingAvailable && state.bestOfferForBuying.price != 0.0) {
-            item {
-                BestOfferView(
-                    title = stringResource(id = R.string.best_offer_for_buying),
-                    bestOffer = state.bestOfferForBuying
-                )
+            if (state.sellingAvailable && state.bestOfferForBuying.price != 0.0) {
+                item {
+                    BestOfferView(
+                        title = stringResource(id = R.string.best_offer_for_buying),
+                        bestOffer = state.bestOfferForBuying
+                    )
+                }
             }
-        }
-        items(state.bankPrices) {
-            BankCurrencyPriceItemView(item = it) {
-                onEvent.invoke(CurrencyDetailsEvent.CurrencyPriceClick(it))
+            items(state.bankPrices) {
+                BankCurrencyPriceItemView(item = it) {
+                    onEvent.invoke(CurrencyDetailsEvent.CurrencyPriceClick(it))
+                }
             }
         }
     }

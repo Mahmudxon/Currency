@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -22,14 +21,13 @@ class MainActivity : ComponentActivity() {
         installSplashScreen()
         enableEdgeToEdge()
         setContent {
-            ContrastAwareCurrencyTheme (dynamicColor = true) {
+            ContrastAwareCurrencyTheme(dynamicColor = true) {
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
                         .background(
                             MaterialTheme.colorScheme.background
                         )
-                        .safeDrawingPadding()
                 ) {
                     ApplicationNavGraph()
                 }

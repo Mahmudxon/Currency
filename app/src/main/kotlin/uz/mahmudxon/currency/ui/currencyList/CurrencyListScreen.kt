@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyItemScope
@@ -60,28 +61,30 @@ fun CurrencyListScreen(
                 onEvent.invoke(CurrencyListEvent.OnRefresh)
             }
         } else {
-            LazyColumn {
-                item {
-                    CurrencySearchBar(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(56.dp)
-                            .padding(horizontal = 16.dp, vertical = 4.dp), state.searchQuery
-                    ) {
-                        onEvent.invoke(
-                            CurrencyListEvent.Search(it)
-                        )
-                    }
+            Column(
+                modifier = Modifier.safeDrawingPadding()
+            ) {
+                CurrencySearchBar(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(56.dp)
+                        .padding(horizontal = 16.dp, vertical = 4.dp), state.searchQuery
+                ) {
+                    onEvent.invoke(
+                        CurrencyListEvent.Search(it)
+                    )
                 }
 
-                items(state.currencies, key = { it.code })
-                {
-                    CurrencyItem(
-                        item = it,
-                        isSelected = it.code == selectedCurrency?.code
-                    ) {
-                        onEvent.invoke(CurrencyListEvent.SelectCurrency(it))
-                        navigateDetails.invoke(it)
+                LazyColumn {
+                    items(state.currencies, key = { it.code })
+                    {
+                        CurrencyItem(
+                            item = it,
+                            isSelected = it.code == selectedCurrency?.code
+                        ) {
+                            onEvent.invoke(CurrencyListEvent.SelectCurrency(it))
+                            navigateDetails.invoke(it)
+                        }
                     }
                 }
             }

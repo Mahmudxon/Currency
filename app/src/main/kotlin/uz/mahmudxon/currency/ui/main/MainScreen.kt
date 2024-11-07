@@ -36,16 +36,14 @@ fun MainScreen() {
             AnimatedPane {
                 val viewModel = hiltViewModel<CurrencyListViewmodel>()
                 val state by viewModel.state.collectAsState()
-                CurrencyListScreen(
-                    state = state,
+                CurrencyListScreen(state = state,
                     onEvent = viewModel::onEvent,
                     selectedCurrency = if (navigator.canNavigateBack()) null
                     else mainState.selectedCurrency,
                     navigateDetails = { item ->
                         navigator.navigateTo(ListDetailPaneScaffoldRole.Detail)
                         mainViewModel.selectCurrency(item)
-                    }
-                )
+                    })
             }
         },
         detailPane = {
