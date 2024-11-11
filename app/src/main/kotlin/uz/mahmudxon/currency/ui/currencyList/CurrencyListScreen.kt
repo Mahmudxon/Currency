@@ -223,7 +223,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = "${item.rate.toMoneyString()} so'm",
+                    text = stringResource(R.string.n_summ_value, item.rate.toMoneyString()),
                     style = MaterialTheme.typography.titleLarge,
                     color = contentColor,
                     modifier = Modifier.weight(1f)

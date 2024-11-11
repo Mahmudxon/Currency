@@ -7,10 +7,11 @@
     <string name="error_refresh">Try again</string>
     <string name="no_connection">Failed to connect</string>
     <string name="no_connection_description">Make sure mobile internet or Wi-Fi is turned on and try again!</string>
-    <string name="uzs_full_name">Uzbek Som</string>
+    <string name="uzs_full_name">Uzbek sum</string>
     <string name="best_offer_for_selling">Best offer for selling:</string>
     <string name="best_offer_for_buying">Best offer for buying:</string>
     <string name="goto_bank_website">Bank website</string>
     <string name="cbu_price">CBU rate</string>
     <string name="bank_price_will_be_different_waring">(!) Data obtained from the bank\'s website. There is no guarantee that you will be able to buy currency at the shown rate!</string>
+    <string name="n_summ_value">%1$s sum</string>
 </resources>

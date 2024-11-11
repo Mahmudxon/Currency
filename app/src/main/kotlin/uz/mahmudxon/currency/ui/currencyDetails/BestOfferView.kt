@@ -18,11 +18,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import uz.mahmudxon.currency.model.BestOffer
 import uz.mahmudxon.currency.util.toMoneyString
+import uz.mahmudxon.currency.R
 
 @Composable
 fun BestOfferView(title: String, bestOffer: BestOffer) {
@@ -94,7 +96,7 @@ fun BestOfferView(title: String, bestOffer: BestOffer) {
                         verticalArrangement = Arrangement.Center
                     ) {
                         Text(
-                            text = "${bestOffer.price.toMoneyString()} so'm",
+                            text = stringResource(R.string.n_summ_value, bestOffer.price.toMoneyString()),
                             style = MaterialTheme.typography.titleLarge,
                             color = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier

@@ -13,4 +13,5 @@
     <string name="goto_bank_website">Bank veb-sayti</string>
     <string name="cbu_price">MB kursi</string>
     <string name="bank_price_will_be_different_waring">(!) Ma\'lumotlar bank saytidan olingan. Valyutani ko\'rsatilgan kursda olishingiz kafolatlanmaydi! </string>
+    <string name="n_summ_value">%1$s so\'m</string>
 </resources>

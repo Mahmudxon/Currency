@@ -89,7 +89,10 @@ fun LazyItemScope.BankCurrencyPriceItemView(item: BankPrice, onClick: () -> Unit
                         color = MaterialTheme.colorScheme.onBackground,
                     )
                     Text(
-                        text = if (item.buy == 0.0) "-" else "${item.buy.toMoneyString()} so'm",
+                        text = if (item.buy == 0.0) "-" else stringResource(
+                            R.string.n_summ_value,
+                            item.buy.toMoneyString()
+                        ),
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
@@ -107,7 +110,10 @@ fun LazyItemScope.BankCurrencyPriceItemView(item: BankPrice, onClick: () -> Unit
                         color = MaterialTheme.colorScheme.onBackground,
                     )
                     Text(
-                        text = if (item.sell == 0.0) "-" else "${item.sell.toMoneyString()} so'm",
+                        text = if (item.sell == 0.0) "-" else stringResource(
+                            R.string.n_summ_value,
+                            item.sell.toMoneyString()
+                        ),
                         style = MaterialTheme.typography.titleLarge,
                         color = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier

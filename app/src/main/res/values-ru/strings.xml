@@ -13,4 +13,5 @@
     <string name="goto_bank_website">Сайт банка</string>
     <string name="cbu_price">Курс ЦБ</string>
     <string name="bank_price_will_be_different_waring">(!) Данные получены с сайта банка. Нет гарантии, что вы сможете приобрести валюту по указанному курсу!</string>
+    <string name="n_summ_value">%1$s сум</string>
 </resources>
