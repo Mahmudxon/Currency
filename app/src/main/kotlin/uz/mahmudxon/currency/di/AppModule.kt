@@ -66,15 +66,6 @@ object AppModule {
     fun providePrefs(@ApplicationContext context: Context): Prefs = Prefs(context)
 
     @Provides
-    fun provideGetCbuCurrencyList(cbu: Cbu, dao: CurrencyDao, prefs: Prefs): GetCurrencyList =
-        GetCurrencyList(
-            cbu = cbu,
-            dao = dao,
-            mapper = CurrencyMapper(),
-            prefs = prefs
-        )
-
-    @Provides
     fun provideGetCbuCurrencyChart(cbu: Cbu, dao: ChartDao, prefs: Prefs): GetCurrencyChart =
         GetCurrencyChart(
             cbu = cbu, dao = dao, prefs = prefs

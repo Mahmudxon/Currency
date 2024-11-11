@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency_names">
+        <item>Доллар США</item>
+        <item>Евро</item>
+        <item>Российский рубль</item>
+        <item>Фунт стерлингов</item>
+        <item>Иена</item>
+        <item>Азербайджанский манат</item>
+        <item>Бангладешская така</item>
+        <item>Болгарский лев</item>
+        <item>Бахрейнский динар</item>
+        <item>Брунейский доллар</item>
+        <item>Бразильский реал</item>
+        <item>Белорусский рубль</item>
+        <item>Канадский доллар</item>
+        <item>Швейцарский франк</item>
+        <item>Юань ренминби</item>
+        <item>Кубинское песо</item>
+        <item>Чешская крона</item>
+        <item>Датская крона</item>
+        <item>Алжирский динар</item>
+        <item>Египетский фунт</item>
+        <item>Афгани</item>
+        <item>Аргентинское песо</item>
+        <item>Грузинский лари</item>
+        <item>Гонконгский доллар</item>
+        <item>Венгерский форинт</item>
+        <item>Рупия</item>
+        <item>Новый израильский шекель</item>
+        <item>Индийская рупия</item>
+        <item>Иракский динар</item>
+        <item>Иранский риал</item>
+        <item>Исландская крона</item>
+        <item>Иорданский динар</item>
+        <item>Австралийский доллар</item>
+        <item>Киргизский сом</item>
+        <item>Риель</item>
+        <item>Вона Республики Корея</item>
+        <item>Кувейтский динар</item>
+        <item>Казахстанский тенге</item>
+        <item>Лаосский кип</item>
+        <item>Ливанский фунт</item>
+        <item>Ливийский динар</item>
+        <item>Марокканский дирхам</item>
+        <item>Молдавский лей</item>
+        <item>Мьянманский кьят</item>
+        <item>Монгольский тугрик</item>
+        <item>Мексиканское песо</item>
+        <item>Малайзийский ринггит</item>
+        <item>Норвежская крона</item>
+        <item>Новозеландский доллар</item>
+        <item>Оманский риал</item>
+        <item>Филиппинское песо</item>
+        <item>Пакистанская рупия</item>
+        <item>Злотый</item>
+        <item>Катарский риал</item>
+        <item>Румынский лей</item>
+        <item>Сербский динар</item>
+        <item>Армянский драм</item>
+        <item>Саудовский риял</item>
+        <item>Суданский фунт</item>
+        <item>Шведская крона</item>
+        <item>Сингапурский доллар</item>
+        <item>Сирийский фунт</item>
+        <item>Бат</item>
+        <item>Сомони</item>
+        <item>Новый туркменский манат</item>
+        <item>Тунисский динар</item>
+        <item>Турецкая лира</item>
+        <item>Гривна</item>
+        <item>Дирхам ОАЭ</item>
+        <item>Уругвайское песо</item>
+        <item>Венесуэльский боливар</item>
+        <item>Донг</item>
+        <item>СДР</item>
+        <item>Йеменский риал</item>
+        <item>Рэнд</item>
+    </string-array>
+</resources>

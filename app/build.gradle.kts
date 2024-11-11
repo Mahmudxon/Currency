@@ -1,5 +1,4 @@
-import com.android.build.api.dsl.ApkSigningConfig
-
+@file:Suppress("UnstableApiUsage")
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -147,7 +146,6 @@ dependencies {
     implementation(libs.androidx.adaptive.layout)
     implementation(libs.androidx.adaptive.navigation)
 
-
     // Splash
     implementation(libs.androidx.core.splashscreen)
 
@@ -188,5 +186,5 @@ dependencies {
     implementation(libs.androidx.work.runtime.ktx)
 
     // Glance
-    implementation (libs.androidx.glance.material3)
+    implementation(libs.androidx.glance.material3)
 }

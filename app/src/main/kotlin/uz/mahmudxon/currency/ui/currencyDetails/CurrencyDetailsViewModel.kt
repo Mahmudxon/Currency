@@ -35,6 +35,9 @@ class CurrencyDetailsViewModel @Inject constructor(
             foreignValue = "1",
             chart = emptyList(),
             bankPrices = emptyList(),
+            bestOfferForSelling = BestOffer(),
+            bestOfferForBuying = BestOffer(),
+            showBankPrice = null,
             sellingAvailable = false
         )
         getData()

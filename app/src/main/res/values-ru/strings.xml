@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Курсы валют</string>
+    <string name="search_currency">Поиск . . .</string>
+    <string name="sell">Продажа</string>
+    <string name="buy">Покупка</string>
+    <string name="error_refresh">Попробуйте снова</string>
+    <string name="no_connection">Не удалось подключиться</string>
+    <string name="no_connection_description">Убедитесь, что мобильный интернет или Wi-Fi включены, и попробуйте снова!</string>
+    <string name="uzs_full_name">Узбекский сум</string>
+    <string name="best_offer_for_selling">Лучшее предложение для продажи:</string>
+    <string name="best_offer_for_buying">Лучшее предложение для покупки:</string>
+    <string name="goto_bank_website">Сайт банка</string>
+    <string name="cbu_price">Курс ЦБ</string>
+    <string name="bank_price_will_be_different_waring">(!) Данные получены с сайта банка. Нет гарантии, что вы сможете приобрести валюту по указанному курсу!</string>
+</resources>
