@@ -11,15 +11,21 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import dagger.hilt.android.AndroidEntryPoint
+import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.ui.navigation.ApplicationNavGraph
 import uz.mahmudxon.currency.ui.theme.ContrastAwareCurrencyTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    lateinit var currencyNameMap: Map<String, String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
+        val codes = resources.getStringArray(R.array.currency_codes)
+        val names = resources.getStringArray(R.array.currency_names)
+        currencyNameMap = codes.zip(names).toMap()
         setContent {
             ContrastAwareCurrencyTheme(dynamicColor = true) {
                 Box(

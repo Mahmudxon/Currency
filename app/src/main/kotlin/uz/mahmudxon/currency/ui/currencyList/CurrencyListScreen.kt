@@ -34,6 +34,7 @@ import coil.compose.AsyncImage
 import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.model.Currency
 import uz.mahmudxon.currency.ui.component.error.NetworkErrorScreenWithButton
+import uz.mahmudxon.currency.util.getCurrencyName
 import uz.mahmudxon.currency.util.toMoneyString
 
 
@@ -213,7 +214,7 @@ fun LazyItemScope.CurrencyItem(item: Currency, isSelected: Boolean = false, onCl
             }
 
             Text(
-                text = item.name,
+                text = getCurrencyName(item),
                 style = MaterialTheme.typography.bodyMedium,
                 color = contentColor,
             )

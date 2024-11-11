@@ -39,6 +39,7 @@ import uz.mahmudxon.currency.ui.component.chart.renderer.point.NoPointDrawer
 import uz.mahmudxon.currency.ui.component.chart.renderer.xaxis.SimpleXAxisDrawer
 import uz.mahmudxon.currency.ui.component.chart.renderer.yaxis.SimpleYAxisDrawer
 import uz.mahmudxon.currency.ui.component.error.NetworkErrorScreenWithButton
+import uz.mahmudxon.currency.util.getCurrencyName
 
 @Composable
 fun CurrencyDetailsScreen(
@@ -109,7 +110,7 @@ fun CurrencyDetailsScreen(
 
             item {
                 ConvertorView(
-                    currencyName = state.currency?.name ?: "",
+                    currencyName = if (state.currency != null) getCurrencyName(state.currency) else "",
                     currencyCode = state.currency?.code ?: "",
                     isForeignCurrencyTop = state.isForeignCurrencyTop,
                     localValue = state.localValue,
@@ -192,7 +193,7 @@ fun ToolbarDetailsScreen(
                 .fillMaxHeight(), verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "${state.currency?.name}",
+                text = if (state.currency != null) getCurrencyName(state.currency) else "",
                 style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.onBackground
             )

@@ -1,11 +1,8 @@
 package uz.mahmudxon.currency.data.repo
 
-import android.content.Context
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
-import uz.mahmudxon.currency.R
 import uz.mahmudxon.currency.data.cache.dao.CurrencyDao
 import uz.mahmudxon.currency.data.cache.mapper.CurrencyMapper
 import uz.mahmudxon.currency.data.cache.prefs.PrefKeys
@@ -20,15 +17,7 @@ class GetCurrencyList @Inject constructor(
     private val cbu: Cbu,
     private val dao: CurrencyDao,
     private val prefs: Prefs,
-    @ApplicationContext private val ctx: Context
 ) {
-    private val currencyNameMapper by lazy {
-        val codes = ctx.resources.getStringArray(R.array.currency_codes)
-        val names = ctx.resources.getStringArray(R.array.currency_names)
-        codes.zip(names).toMap()
-    }
-
-
     private val mapper = CurrencyMapper()
     fun execute(): Flow<DataState<List<Currency>>> = flow {
         emit(DataState.loading())
@@ -40,15 +29,12 @@ class GetCurrencyList @Inject constructor(
 
         if (isLocalDataActual) {
             val response = dao.getAll().map {
-                it.name = currencyNameMapper[it.code] ?: it.name
                 mapper.mapToDomain(it)
             }
             emit(DataState.data(response))
         } else {
             val response = cbu.getCurrencyList()
-                .map {
-                    it.toCurrency(currencyNameMapper[it.code])
-                }
+                .map { it.toCurrency() }
             dao.deleteAll()
             dao.upsert(response.map { mapper.mapFromDomain(it) })
             prefs.save(PrefKeys.currencyUpdate, System.currentTimeMillis())

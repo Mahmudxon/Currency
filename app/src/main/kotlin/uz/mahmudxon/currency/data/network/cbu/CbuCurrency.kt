@@ -29,11 +29,9 @@ data class CbuCurrency(
     @SerialName("Rate")
     val rate: String
 ) {
-    fun toCurrency(
-        nameByLanguage: String?
-    ) = Currency(
+    fun toCurrency() = Currency(
         code = ccy,
-        name = nameByLanguage ?: ccyNmUZ,
+        name = ccyNmUZ,
         rate = rate.toDouble(),
         date = date,
         diff = if (diff == "0" || diff.startsWith("-")) diff else "+$diff"
