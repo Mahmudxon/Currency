@@ -23,8 +23,8 @@ android {
         applicationId = "uz.mahmudxon.currency"
         minSdk = 24
         targetSdk = 35
-        versionCode = 2009
-        versionName = "2.0.9"
+        versionCode = 2010
+        versionName = "2.0.10"
         setProperty("archivesBaseName", "Valyuta Kurslari V$versionName")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
