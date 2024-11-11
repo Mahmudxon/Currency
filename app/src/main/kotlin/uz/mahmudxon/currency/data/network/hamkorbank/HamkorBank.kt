@@ -23,16 +23,32 @@ class HamkorBank(networkClient: NetworkClient) : CommercialBank(networkClient) {
 
     override suspend fun getCurrencyPrice(responseAsText: String): List<Double> {
         val jsonData = Json.decodeFromString<Response>(responseAsText)
-        val result = mutableListOf<Double>()
+        var usdSell: Double = 0.0
+        var usdBuy: Double = 0.0
+        var eurSell: Double = 0.0
+        var eurBuy: Double = 0.0
+        var rubSell: Double = 0.0
+        var rubBuy: Double = 0.0
 
         jsonData.data.forEach { currency ->
             when (currency.currency_char) {
-                "USD", "EUR", "RUB" -> {
-                    result.add(currency.buying_rate / 100)
-                    result.add(currency.selling_rate / 100)
+                "USD" -> {
+                    usdSell = currency.selling_rate / 100
+                    usdBuy = currency.buying_rate / 100
+                }
+
+                "EUR" -> {
+                    eurSell = currency.selling_rate / 100
+                    eurBuy = currency.buying_rate / 100
+                }
+
+                "RUB" -> {
+                    rubSell = currency.selling_rate / 100
+                    rubBuy = currency.buying_rate / 100
                 }
             }
         }
-        return result
+
+        return listOf(usdBuy, usdSell, eurBuy, eurSell, rubBuy, rubSell)
     }
 }
