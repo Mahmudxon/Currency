@@ -17,12 +17,14 @@ import uz.mahmudxon.currency.ui.theme.ContrastAwareCurrencyTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    // Bad Idea
     lateinit var currencyNameMap: Map<String, String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
         enableEdgeToEdge()
+        // I know bro, I know :)
         val codes = resources.getStringArray(R.array.currency_codes)
         val names = resources.getStringArray(R.array.currency_names)
         currencyNameMap = codes.zip(names).toMap()
