@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Özbekistan Döviz Kurları</string>
+    <string name="search_currency">Ara . . .</string>
+    <string name="sell">Satış</string>
+    <string name="buy">Alış</string>
+    <string name="error_refresh">Tekrar dene</string>
+    <string name="no_connection">Bağlantı başarısız</string>
+    <string name="no_connection_description">Mobil internet veya Wi-Fi\'nin açık olduğundan emin olun ve tekrar deneyin!</string>
+    <string name="uzs_full_name">Özbek Somu</string>
+    <string name="best_offer_for_selling">Satış için en iyi teklif:</string>
+    <string name="best_offer_for_buying">Alış için en iyi teklif:</string>
+    <string name="goto_bank_website">Banka web sitesi</string>
+    <string name="cbu_price">MB Kuru</string>
+    <string name="bank_price_will_be_different_waring">(!) Veriler banka web sitesinden alınmıştır. Gösterilen kurdan döviz alabileceğiniz garanti edilmez!</string>
+    <string name="n_summ_value">%1$s som</string>
+</resources>
+

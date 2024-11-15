@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency_names">
+        <item>Доллари ИМА</item>
+        <item>Евро</item>
+        <item>Рубли Русия</item>
+        <item>Фунт стерлинги Британия</item>
+        <item>Йенаи Ҷопон</item>
+        <item>Манати Озарбойҷон</item>
+        <item>Такаи Бангладеш</item>
+        <item>Леви Булғория</item>
+        <item>Динори Баҳрайн</item>
+        <item>Доллари Бруней</item>
+        <item>Реали Бразилия</item>
+        <item>Рубли Белорус</item>
+        <item>Доллари Канада</item>
+        <item>Франки Швейтсария</item>
+        <item>Юани Чин</item>
+        <item>Песои Куба</item>
+        <item>Крони Чехия</item>
+        <item>Крони Дания</item>
+        <item>Динори Алҷазоир</item>
+        <item>Фунти Миср</item>
+        <item>Афғони Афғонистон</item>
+        <item>Песои Аргентина</item>
+        <item>Ларии Гурҷистон</item>
+        <item>Доллари Ҳонконг</item>
+        <item>Форинти Маҷористон</item>
+        <item>Рупияи Индонезия</item>
+        <item>Шекели нави Исроил</item>
+        <item>Рупияи Ҳиндустон</item>
+        <item>Динори Ироқ</item>
+        <item>Риали Эрон</item>
+        <item>Крони Исландия</item>
+        <item>Динори Урдун</item>
+        <item>Доллари Австралия</item>
+        <item>Соми Қирғизистон</item>
+        <item>Риели Камбоҷа</item>
+        <item>Вони Ҷумҳурии Корея</item>
+        <item>Динори Кувайт</item>
+        <item>Тенгеи Қазоқистон</item>
+        <item>Кипи Лаос</item>
+        <item>Фунти Лубнон</item>
+        <item>Динори Либия</item>
+        <item>Дирҳами Марокаш</item>
+        <item>Лейи Молдова</item>
+        <item>Киати Мянма</item>
+        <item>Тугрики Муғулистон</item>
+        <item>Песои Мексика</item>
+        <item>Ринггити Малайзия</item>
+        <item>Крони Норвегия</item>
+        <item>Доллари Зеландияи Нав</item>
+        <item>Риали Уммон</item>
+        <item>Песои Филиппин</item>
+        <item>Рупияи Покистон</item>
+        <item>Злотии Лаҳистон</item>
+        <item>Риали Қатар</item>
+        <item>Лейи Руминия</item>
+        <item>Динори Сербия</item>
+        <item>Драми Арманистон</item>
+        <item>Риали Арабистони Саудӣ</item>
+        <item>Фунти Судон</item>
+        <item>Крони Шветсия</item>
+        <item>Доллари Сингапур</item>
+        <item>Фунти Сурия</item>
+        <item>Бати Тайланд</item>
+        <item>Сомонии Тоҷикистон</item>
+        <item>Манати Туркманистон</item>
+        <item>Динори Тунис</item>
+        <item>Лираи Туркия</item>
+        <item>Гривнаи Украина</item>
+        <item>Дирҳами АМА</item>
+        <item>Песои Уругвай</item>
+        <item>Боливари Венесуэла</item>
+        <item>Донги Ветнам</item>
+        <item>СДР</item>
+        <item>Риали Яман</item>
+        <item>Ранди Африқои Ҷанубӣ</item>
+    </string-array>
+</resources>

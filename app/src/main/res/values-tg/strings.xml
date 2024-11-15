@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Қурби Асъори Узбекистон</string>
+    <string name="search_currency">Ҷустуҷӯ . . .</string>
+    <string name="sell">Фурӯш</string>
+    <string name="buy">Харид</string>
+    <string name="error_refresh">Боз кӯшиш кунед</string>
+    <string name="no_connection">Пайвастшавӣ ноком шуд</string>
+    <string name="no_connection_description">Боварӣ ҳосил кунед, ки интернети мобилӣ ё Wi-Fi фаъол аст ва боз кӯшиш кунед!</string>
+    <string name="uzs_full_name">Сӯми Узбекистон</string>
+    <string name="best_offer_for_selling">Беҳтарин пешниҳод барои фурӯш:</string>
+    <string name="best_offer_for_buying">Беҳтарин пешниҳод барои харид:</string>
+    <string name="goto_bank_website">Вебсайти бонк</string>
+    <string name="cbu_price">Қурби БМТ</string>
+    <string name="bank_price_will_be_different_waring">(!) Маълумот аз вебсайти бонк гирифта шудааст. Қарор нест, ки асъор бо қурби нишоншуда харидорӣ шавад!</string>
+    <string name="n_summ_value">%1$s сӯм</string>
+</resources>
+

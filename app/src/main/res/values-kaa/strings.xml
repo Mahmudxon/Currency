@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Özbekstan Valyuta Bağası</string>
+    <string name="search_currency">Izlew . . .</string>
+    <string name="sell">Satuw</string>
+    <string name="buy">Satıw alıw</string>
+    <string name="error_refresh">Qayta urınıp körıñiz</string>
+    <string name="no_connection">Baylanısw bolmadı</string>
+    <string name="no_connection_description">Mobil internetti nemese Wi-Fi-diń qósılǵanın tekserip, qayta urınıp körıñiz!</string>
+    <string name="uzs_full_name">Özbek sómi</string>
+    <string name="best_offer_for_selling">Satuw ushın eń jaqsı usınıs:</string>
+    <string name="best_offer_for_buying">Satıw alıw ushın eń jaqsı usınıs:</string>
+    <string name="goto_bank_website">Bank saytına barıw</string>
+    <string name="cbu_price">MB bağası</string>
+    <string name="bank_price_will_be_different_waring">(!) Málimetler bank saytınan alındı. Körsetilgen bağa boyınsha valyutanı alıwǵa kepillik berilmeýdi!</string>
+    <string name="n_summ_value">%1$s sóm</string>
+</resources>
+

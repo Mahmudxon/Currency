@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Өзбекстан Валюта Бағамдары</string>
+    <string name="search_currency">Іздеу . . .</string>
+    <string name="sell">Сату</string>
+    <string name="buy">Сатып алу</string>
+    <string name="error_refresh">Қайта әрекеттену</string>
+    <string name="no_connection">Қосылу сәтсіз аяқталды</string>
+    <string name="no_connection_description">Мобильді интернет немесе Wi-Fi қосулы екеніне көз жеткізіп, қайта әрекеттеніңіз!</string>
+    <string name="uzs_full_name">Өзбек сомы</string>
+    <string name="best_offer_for_selling">Сату үшін ең жақсы ұсыныс:</string>
+    <string name="best_offer_for_buying">Сатып алу үшін ең жақсы ұсыныс:</string>
+    <string name="goto_bank_website">Банк сайты</string>
+    <string name="cbu_price">Ұлттық Банк бағамы</string>
+    <string name="bank_price_will_be_different_waring">(!) Бұл деректер банк сайтынан алынған. Көрсетілген бағам бойынша валюта алуға кепілдік берілмейді!</string>
+    <string name="n_summ_value">%1$s сом</string>
+</resources>
+

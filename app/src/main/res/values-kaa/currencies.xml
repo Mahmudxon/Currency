@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency_names">
+        <item>AQSH dollari</item>
+        <item>Euro</item>
+        <item>Resey rubli</item>
+        <item>Angliya funt sterlingi</item>
+        <item>Yaponiya iyenasi</item>
+        <item>Äzerbayjan manatı</item>
+        <item>Bangladeş takası</item>
+        <item>Bolğariya levi</item>
+        <item>Bahrayn dinarı</item>
+        <item>Bruney dollari</item>
+        <item>Braziliya reali</item>
+        <item>Belarus rubli</item>
+        <item>Kanada dollari</item>
+        <item>Şveytsariya franğı</item>
+        <item>Şın yuanı</item>
+        <item>Kuba pesosi</item>
+        <item>Chexiya kronası</item>
+        <item>Daniya kronası</item>
+        <item>Aljir dinarı</item>
+        <item>Misir funti</item>
+        <item>Afgʻanistan afgʻonisi</item>
+        <item>Argentina pesosi</item>
+        <item>Gruziya larisi</item>
+        <item>Gongkong dollari</item>
+        <item>Vengriya forinti</item>
+        <item>Indoneziya rupiyası</item>
+        <item>Israil şekeli</item>
+        <item>Indistan rupiyası</item>
+        <item>Iraq dinarı</item>
+        <item>Eron riali</item>
+        <item>Islandiya kronası</item>
+        <item>Iordaniya dinarı</item>
+        <item>Avstraliya dollari</item>
+        <item>Qırğız somı</item>
+        <item>Kambodja riyeli</item>
+        <item>Koreya Respublikası vonı</item>
+        <item>Quvayt dinarı</item>
+        <item>Qazaqstan teñgesi</item>
+        <item>Laos kipisi</item>
+        <item>Livan funti</item>
+        <item>Liviya dinarı</item>
+        <item>Marokash dirhamı</item>
+        <item>Moldova leyi</item>
+        <item>M\'yanma kyatı</item>
+        <item>Moğoliya tuğriki</item>
+        <item>Meksika pesosi</item>
+        <item>Malayziya ringgiti</item>
+        <item>Norvegiya kronası</item>
+        <item>Jańa Zelandiya dollari</item>
+        <item>Ummon riali</item>
+        <item>Filippin pesosi</item>
+        <item>Pokiston rupiyası</item>
+        <item>Polsha zlotıyı</item>
+        <item>Qatar riali</item>
+        <item>Rumıniya leyi</item>
+        <item>Serbiya dinarı</item>
+        <item>Armanistan drami</item>
+        <item>Saudiya Arabistánı riali</item>
+        <item>Sudan funti</item>
+        <item>Şveciya kronası</item>
+        <item>Singapur dollari</item>
+        <item>Siriya funti</item>
+        <item>Tayland bati</item>
+        <item>Tojikistan somonisi</item>
+        <item>Turkmenistan manatı</item>
+        <item>Tunis dinarı</item>
+        <item>Turkiya lirasi</item>
+        <item>Ukraina grivnası</item>
+        <item>BAÄ dirhamı</item>
+        <item>Urugvay pesosi</item>
+        <item>Venesuela bolivarı</item>
+        <item>Vetnam dongı</item>
+        <item>SDR</item>
+        <item>Yemen riali</item>
+        <item>Janubiy Afrika randi</item>
+    </string-array>
+</resources>

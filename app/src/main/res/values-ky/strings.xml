@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Өзбекстан Валюта Курстары</string>
+    <string name="search_currency">Издөө . . .</string>
+    <string name="sell">Сатуу</string>
+    <string name="buy">Сатып алуу</string>
+    <string name="error_refresh">Кайра аракет кылыңыз</string>
+    <string name="no_connection">Байланышууга мүмкүн болбой калды</string>
+    <string name="no_connection_description">Мобилдик интернет же Wi-Fi күйгүзүлгөнүн текшерип, кайра аракет кылыңыз!</string>
+    <string name="uzs_full_name">Өзбек сом</string>
+    <string name="best_offer_for_selling">Сатуу үчүн эң жакшы сунуш:</string>
+    <string name="best_offer_for_buying">Сатып алуу үчүн эң жакшы сунуш:</string>
+    <string name="goto_bank_website">Банк сайты</string>
+    <string name="cbu_price">УБ курсу</string>
+    <string name="bank_price_will_be_different_waring">(!) Маалыматтар банк сайтынын негизинде алынган. Көрсөтүлгөн курстан валюта алуу кепилдиги жок!</string>
+    <string name="n_summ_value">%1$s сом</string>
+</resources>

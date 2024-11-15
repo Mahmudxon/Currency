@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency_names">
+        <item>АҚШ доллары</item>
+        <item>Еуро</item>
+        <item>Ресей рублі</item>
+        <item>Ағылшын фунт стерлингі</item>
+        <item>Жапон иенасы</item>
+        <item>Әзірбайжан манаты</item>
+        <item>Бангладеш такасы</item>
+        <item>Болгар леві</item>
+        <item>Бахрейн динары</item>
+        <item>Бруней доллары</item>
+        <item>Бразилия реалы</item>
+        <item>Беларусь рублі</item>
+        <item>Канада доллары</item>
+        <item>Швейцария франкі</item>
+        <item>Қытай юаны</item>
+        <item>Куба песосы</item>
+        <item>Чехия кронасы</item>
+        <item>Дания кронасы</item>
+        <item>Алжир динары</item>
+        <item>Мысыр фунты</item>
+        <item>Ауған афганиі</item>
+        <item>Аргентина песосы</item>
+        <item>Грузия ларисы</item>
+        <item>Гонконг доллары</item>
+        <item>Мажар форинті</item>
+        <item>Индонезия рупийі</item>
+        <item>Жаңа Израиль шекелі</item>
+        <item>Үндістан рупийі</item>
+        <item>Ирак динары</item>
+        <item>Иран риалы</item>
+        <item>Исландия кронасы</item>
+        <item>Иордания динары</item>
+        <item>Австралия доллары</item>
+        <item>Қырғыз сомы</item>
+        <item>Камбоджа риелі</item>
+        <item>Оңтүстік Корея воны</item>
+        <item>Кувейт динары</item>
+        <item>Қазақстан теңгесі</item>
+        <item>Лаос кипі</item>
+        <item>Ливан фунты</item>
+        <item>Ливия динары</item>
+        <item>Марокко дирхамы</item>
+        <item>Молдова лейі</item>
+        <item>Мьянма кяты</item>
+        <item>Моңғол тугригі</item>
+        <item>Мексика песосы</item>
+        <item>Малайзия ринггиті</item>
+        <item>Норвегия кроны</item>
+        <item>Жаңа Зеландия доллары</item>
+        <item>Оман риалы</item>
+        <item>Филиппин песосы</item>
+        <item>Пәкістан рупийі</item>
+        <item>Польша злотыйы</item>
+        <item>Катар риалы</item>
+        <item>Румыния лейі</item>
+        <item>Сербия динары</item>
+        <item>Армения драмы</item>
+        <item>Сауд Арабиясы риалы</item>
+        <item>Судан фунты</item>
+        <item>Швеция кронасы</item>
+        <item>Сингапур доллары</item>
+        <item>Сирия фунты</item>
+        <item>Тайланд баты</item>
+        <item>Тәжікстан сомониі</item>
+        <item>Түрікменстан манаты</item>
+        <item>Тунис динары</item>
+        <item>Түрік лирасы</item>
+        <item>Украина гривнасы</item>
+        <item>БАӘ дирхамы</item>
+        <item>Уругвай песосы</item>
+        <item>Венесуэла боливары</item>
+        <item>Вьетнам донгы</item>
+        <item>СДР</item>
+        <item>Йемен риалы</item>
+        <item>Оңтүстік Африка ранды</item>
+    </string-array>
+</resources>
