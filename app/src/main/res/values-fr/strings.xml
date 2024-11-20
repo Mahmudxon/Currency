@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Taux de Change Ouzbékistan</string>
+    <string name="search_currency">Rechercher . . .</string>
+    <string name="sell">Vendre</string>
+    <string name="buy">Acheter</string>
+    <string name="error_refresh">Réessayer</string>
+    <string name="no_connection">Connexion impossible</string>
+    <string name="no_connection_description">Assurez-vous que les données mobiles ou le Wi-Fi sont activés, puis réessayez !</string>
+    <string name="uzs_full_name">Soum ouzbek</string>
+    <string name="best_offer_for_selling">Meilleure offre pour vendre :</string>
+    <string name="best_offer_for_buying">Meilleure offre pour acheter :</string>
+    <string name="goto_bank_website">Site web de la banque</string>
+    <string name="cbu_price">Taux de la BCU</string>
+    <string name="bank_price_will_be_different_waring">(!) Les données proviennent du site web de la banque. Aucune garantie que vous puissiez acheter la devise au taux affiché !</string>
+    <string name="n_summ_value">%1$s soum</string>
+</resources>

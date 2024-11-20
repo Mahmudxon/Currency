@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tasas de Cambio Uzbekistán</string>
+    <string name="search_currency">Buscar . . .</string>
+    <string name="sell">Vender</string>
+    <string name="buy">Comprar</string>
+    <string name="error_refresh">Intentar de nuevo</string>
+    <string name="no_connection">No se pudo conectar</string>
+    <string name="no_connection_description">¡Asegúrate de que los datos móviles o el Wi-Fi estén activados y vuelve a intentarlo!</string>
+    <string name="uzs_full_name">Som uzbeko</string>
+    <string name="best_offer_for_selling">Mejor oferta para vender:</string>
+    <string name="best_offer_for_buying">Mejor oferta para comprar:</string>
+    <string name="goto_bank_website">Sitio web del banco</string>
+    <string name="cbu_price">Tasa del CBU</string>
+    <string name="bank_price_will_be_different_waring">(!) Datos obtenidos del sitio web del banco. ¡No hay garantía de que puedas comprar la moneda a la tasa mostrada!</string>
+    <string name="n_summ_value">%1$s som</string>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency_names">
+        <item>Dólar estadounidense</item>
+        <item>Euro</item>
+        <item>Rublo ruso</item>
+        <item>Libra esterlina</item>
+        <item>Yen japonés</item>
+        <item>Manat de Azerbaiyán</item>
+        <item>Taka de Bangladés</item>
+        <item>Lev búlgaro</item>
+        <item>Dinar de Baréin</item>
+        <item>Dólar de Brunéi</item>
+        <item>Real brasileño</item>
+        <item>Rublo bielorruso</item>
+        <item>Dólar canadiense</item>
+        <item>Franco suizo</item>
+        <item>Yuan chino</item>
+        <item>Peso cubano</item>
+        <item>Corona checa</item>
+        <item>Corona danesa</item>
+        <item>Dinar argelino</item>
+        <item>Libra egipcia</item>
+        <item>Afgani afgano</item>
+        <item>Peso argentino</item>
+        <item>Lari georgiano</item>
+        <item>Dólar de Hong Kong</item>
+        <item>Florín húngaro</item>
+        <item>Rupia indonesia</item>
+        <item>Nuevo shéquel israelí</item>
+        <item>Rupia india</item>
+        <item>Dinar iraquí</item>
+        <item>Rial iraní</item>
+        <item>Corona islandesa</item>
+        <item>Dinar jordano</item>
+        <item>Dólar australiano</item>
+        <item>Som kirguís</item>
+        <item>Riel camboyano</item>
+        <item>Won surcoreano</item>
+        <item>Dinar kuwaití</item>
+        <item>Tenge kazajo</item>
+        <item>Kip laosiano</item>
+        <item>Libra libanesa</item>
+        <item>Dinar libio</item>
+        <item>Dirham marroquí</item>
+        <item>Leu moldavo</item>
+        <item>Kyat birmano</item>
+        <item>Tugrik mongol</item>
+        <item>Peso mexicano</item>
+        <item>Ringgit malasio</item>
+        <item>Corona noruega</item>
+        <item>Dólar neozelandés</item>
+        <item>Rial omaní</item>
+        <item>Peso filipino</item>
+        <item>Rupia pakistaní</item>
+        <item>Zloty polaco</item>
+        <item>Riyal catarí</item>
+        <item>Leu rumano</item>
+        <item>Dinar serbio</item>
+        <item>Dram armenio</item>
+        <item>Riyal saudí</item>
+        <item>Libra sudanesa</item>
+        <item>Corona sueca</item>
+        <item>Dólar singapurense</item>
+        <item>Libra siria</item>
+        <item>Baht tailandés</item>
+        <item>Somoni tayiko</item>
+        <item>Manat turkmeno</item>
+        <item>Dinar tunecino</item>
+        <item>Lira turca</item>
+        <item>Grivna ucraniana</item>
+        <item>Dirham de los EAU</item>
+        <item>Peso uruguayo</item>
+        <item>Bolívar venezolano</item>
+        <item>Dong vietnamita</item>
+        <item>SDR</item>
+        <item>Rial yemení</item>
+        <item>Rand sudafricano</item>
+    </string-array>
+</resources>

@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.serialization)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.google.services)
 }
 
 val RELEASE_KEY_ALIAS: String by project
@@ -191,4 +192,8 @@ dependencies {
 
     // Glance
     implementation(libs.androidx.glance.material3)
+
+    // firebase
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
 }

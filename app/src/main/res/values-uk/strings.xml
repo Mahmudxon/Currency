@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Курси Валют Узбекистан</string>
+    <string name="search_currency">Пошук . . .</string>
+    <string name="sell">Продаж</string>
+    <string name="buy">Купівля</string>
+    <string name="error_refresh">Спробувати ще раз</string>
+    <string name="no_connection">Не вдалося підключитися</string>
+    <string name="no_connection_description">Переконайтеся, що мобільний інтернет або Wi-Fi увімкнені, і спробуйте ще раз!</string>
+    <string name="uzs_full_name">Узбецький сум</string>
+    <string name="best_offer_for_selling">Найкраща пропозиція для продажу:</string>
+    <string name="best_offer_for_buying">Найкраща пропозиція для купівлі:</string>
+    <string name="goto_bank_website">Вебсайт банку</string>
+    <string name="cbu_price">Курс ЦБУ</string>
+    <string name="bank_price_will_be_different_waring">(!) Дані взято із сайту банку. Немає гарантії, що ви зможете придбати валюту за вказаним курсом!</string>
+    <string name="n_summ_value">%1$s сум</string>
+</resources>

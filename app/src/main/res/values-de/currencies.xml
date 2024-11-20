@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="currency_names">
+        <item>US-Dollar</item>
+        <item>Euro</item>
+        <item>Russischer Rubel</item>
+        <item>Pfund Sterling</item>
+        <item>Japanischer Yen</item>
+        <item>Aserbaidschan-Manat</item>
+        <item>Bangladesch-Taka</item>
+        <item>Bulgarischer Lew</item>
+        <item>Bahrain-Dinar</item>
+        <item>Brunei-Dollar</item>
+        <item>Brasilianischer Real</item>
+        <item>Weißrussischer Rubel</item>
+        <item>Kanadischer Dollar</item>
+        <item>Schweizer Franken</item>
+        <item>Chinesischer Yuan</item>
+        <item>Kubanischer Peso</item>
+        <item>Tschechische Krone</item>
+        <item>Dänische Krone</item>
+        <item>Algerischer Dinar</item>
+        <item>Ägyptisches Pfund</item>
+        <item>Afghanischer Afghani</item>
+        <item>Argentinischer Peso</item>
+        <item>Georgischer Lari</item>
+        <item>Hongkong-Dollar</item>
+        <item>Ungarischer Forint</item>
+        <item>Indonesische Rupiah</item>
+        <item>Neuer Israelischer Schekel</item>
+        <item>Indische Rupie</item>
+        <item>Irakischer Dinar</item>
+        <item>Iranischer Rial</item>
+        <item>Isländische Krone</item>
+        <item>Jordanischer Dinar</item>
+        <item>Australischer Dollar</item>
+        <item>Kirgisischer Som</item>
+        <item>Kambodschanischer Riel</item>
+        <item>Südkoreanischer Won</item>
+        <item>Kuwait-Dinar</item>
+        <item>Kasachischer Tenge</item>
+        <item>Laotischer Kip</item>
+        <item>Libanesisches Pfund</item>
+        <item>Libyscher Dinar</item>
+        <item>Marokkanischer Dirham</item>
+        <item>Moldawischer Leu</item>
+        <item>Myanma Kyat</item>
+        <item>Mongolischer Tugrik</item>
+        <item>Mexikanischer Peso</item>
+        <item>Malaysischer Ringgit</item>
+        <item>Norwegische Krone</item>
+        <item>Neuseeland-Dollar</item>
+        <item>Omanischer Rial</item>
+        <item>Philippinischer Peso</item>
+        <item>Pakistanische Rupie</item>
+        <item>Polnischer Zloty</item>
+        <item>Katar-Riyal</item>
+        <item>Rumänischer Leu</item>
+        <item>Serbischer Dinar</item>
+        <item>Armenischer Dram</item>
+        <item>Saudi-Riyal</item>
+        <item>Sudanesisches Pfund</item>
+        <item>Schwedische Krone</item>
+        <item>Singapur-Dollar</item>
+        <item>Syrisches Pfund</item>
+        <item>Thailändischer Baht</item>
+        <item>Tadschikischer Somoni</item>
+        <item>Turkmenischer Manat</item>
+        <item>Tunesischer Dinar</item>
+        <item>Türkische Lira</item>
+        <item>Ukrainische Hrywnja</item>
+        <item>VAE-Dirham</item>
+        <item>Uruguayischer Peso</item>
+        <item>Venezolanischer Bolívar</item>
+        <item>Vietnamesischer Dong</item>
+        <item>SDR</item>
+        <item>Jemenitischer Rial</item>
+        <item>Südafrikanischer Rand</item>
+    </string-array>
+</resources>

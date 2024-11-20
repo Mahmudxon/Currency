@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wechselkurse Usbekistan</string>
+    <string name="search_currency">Suchen . . .</string>
+    <string name="sell">Verkaufen</string>
+    <string name="buy">Kaufen</string>
+    <string name="error_refresh">Erneut versuchen</string>
+    <string name="no_connection">Verbindung fehlgeschlagen</string>
+    <string name="no_connection_description">Stellen Sie sicher, dass mobiles Internet oder WLAN aktiviert ist, und versuchen Sie es erneut!</string>
+    <string name="uzs_full_name">Usbekischer Som</string>
+    <string name="best_offer_for_selling">Bestes Angebot zum Verkaufen:</string>
+    <string name="best_offer_for_buying">Bestes Angebot zum Kaufen:</string>
+    <string name="goto_bank_website">Bank-Website</string>
+    <string name="cbu_price">CBU-Kurs</string>
+    <string name="bank_price_will_be_different_waring">(!) Daten wurden von der Bank-Website übernommen. Es gibt keine Garantie, dass Sie die Währung zum angezeigten Kurs kaufen können!</string>
+    <string name="n_summ_value">%1$s Som</string>
+</resources>

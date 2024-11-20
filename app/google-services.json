@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "235724666984",
+    "project_id": "currency-rates-uzbekistan",
+    "storage_bucket": "currency-rates-uzbekistan.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235724666984:android:e45d423846e4b0ecc163dd",
+        "android_client_info": {
+          "package_name": "uz.mahmudxon.currency"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApdwtru3WAsGU8k5KlJezx2WTzc0VmxVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
