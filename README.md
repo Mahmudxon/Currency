@@ -43,7 +43,8 @@ Check out our app on the [Google Play Store](https://play.google.com/store/apps/
 
 ## Support
 
-If you appreciate the project and would like to support its development, consider buying me a coffee: [Buy Me a Coffee](https://buymeacoffee.com/mahmudxon)
+If you appreciate the project and would like to support its development, consider buying me a coffee: <br/>
+[<img src="https://github.com/Mahmudxon/Currency/blob/master/img/bmc_qr.png" alt="Buy me coffee" style="width: 20%;" />](https://buymeacoffee.com/mahmudxon)
 
 
 ## License
