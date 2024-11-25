@@ -40,5 +40,11 @@ Special thanks to Taras Koshkin for his amazing [charts library](https://github.
 
 Check out our app on the [Google Play Store](https://play.google.com/store/apps/details?id=uz.mahmudxon.currency).
 
+
+## Support
+
+If you appreciate the project and would like to support its development, consider buying me a coffee: [Buy Me a Coffee](https://buymeacoffee.com/mahmudxon)
+
+
 ## License
 This project is licensed under the Apache License 2.0
