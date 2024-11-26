@@ -38,7 +38,8 @@ This repository is open to any pull requests. Contributions are welcome! Please 
 
 Special thanks to Taras Koshkin for his amazing [charts library](https://github.com/tehras/charts) that made the creation of beautiful and interactive charts in this project possible.
 
-Check out our app on the [Google Play Store](https://play.google.com/store/apps/details?id=uz.mahmudxon.currency).
+Check out our app: <br/>
+[<img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play Store" style="width: 20%;" />]([https://buymeacoffee.com/mahmudxon](https://play.google.com/store/apps/details?id=uz.mahmudxon.currency))
 
 
 ## Support
